@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+body {
+    max-width: 900px !important;
+}
+
+.info {
+    /* background-color: red; */
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+    width: 51.5rem;
+    /* 824px */
+}
+
+.box {
+    background-color: #EAEAEA;
+    border-radius: 25px;
+    width: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+.box-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+}
+
+.box h1 {
+    margin: 0;
+    font-size: 20px;
+    color: #4180AB;
+    text-align: center;
+}
+
+
+.img img {
+    width: 24px;
+    /* ou ajuste conforme necessário */
+    height: 24px;
+
+}
+
+.bg-primary-infi {
+    background-color: #4180AB !important;
+}
+
+#text h1 {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+#text h6 {
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.txt-container {
+    max-width: 900px;
+    width: 100%;
+    justify-content: space-between;
+    gap: 20px;
+    display: flex;
+}
+
+.txt {
+    width: 50%;
+    padding: 1rem;
+    background-color: #EAEAEA;
+    border-radius: 35px;
+
+}
+
+.txt h1 {
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    color: #4180AB;
+}
+
+.txt h6 {
+    text-align: justify;
+}
+
+.bg-primary-infi {
+    background-color: #4180AB !important;
+}
+
+
+@media screen and (max-width: 600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        
+    }
+    
+    .info {
+        flex-direction: column;
+        gap: 1px;
+        align-items: center;
+        width: 100vh;
+    }
+
+    .esquerda {
+        width: 100%;
+        height: 6.25rem;
+    }
+
+    .direito {
+        width: 100%;
+        height: 6.25rem;
+    }
+
+    
+
+    .box {
+        height: 10%;
+      
+        width: 100%;
+    }
+
+    .box-content {
+        width: 100%;
+        gap: 10px;
+       
+    }
+
+    .box-content h1 {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+
+    .txt h1 {
+        font-size: 1.8rem;
+    }
+
+    .txt h6 {
+        font-size: 1rem;
+    }
+
+    .txt-container{
+        display: none;
+        
+    }
+}

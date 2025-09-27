@@ -1,0 +1,503 @@
+/* Reset e configurações básicas */
+html, body {
+    height: 100%;
+    margin: 0;
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    padding-top: 76px; /* Ajuste para a altura do navbar */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Layout principal */
+.main-content {
+    flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
+    padding-top: 1rem; /* Espaçamento para o conteúdo abaixo do navbar */
+    padding-bottom: 1rem;
+}
+
+/* Container responsivo */
+.container-fluid {
+    width: 100%; /* Usa a largura total */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0; /* Remove margens automáticas */
+    max-width: none; /* Remove limite de largura */
+}
+
+
+/* Mapa responsivo */
+.mapa-frame {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.mapa-frame iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 12px;
+}
+
+
+/* Cards base */
+.card-custom {
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #EAEAEA;
+    color: #4180AB;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.card-custom:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Títulos dos cards - TAMANHOS EQUILIBRADOS */
+.card-custom h2 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: #4180AB;
+    font-weight: bold;
+}
+
+
+.card-custom h3 {
+    font-size: 1.1rem;
+    color: #4180AB;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+
+/* Atividades Recentes */
+.atividades-recentes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+
+.activity-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+}
+
+
+.activity-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.activity-text {
+    flex: 1;
+}
+
+
+.activity-text p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+
+/* Localização da Frota */
+.localizacao-da-frota {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.chart-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+}
+
+
+#graficoRosca {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* Alertas Prioritários - TAMANHOS EQUILIBRADOS */
+.alertas-prioritarios {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.alert-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+
+.alert-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.alert-number h4 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4180AB;
+}
+
+
+/* Linhas - TAMANHOS EQUILIBRADOS */
+.linhas {
+    display: flex;
+    flex-direction: column;
+    color: #4180AB;
+}
+
+
+.linhas h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+
+.linhas-content {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 1;
+}
+
+
+.linha-item {
+    flex: 1;
+    text-align: center;
+    padding: 1.25rem 0.75rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80px;
+}
+
+
+.linha-item.ativa {
+    background-color: #004A98;
+}
+
+
+.linha-item.inativa {
+    background-color: #4180AB;
+}
+
+
+.linha-item h2 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+.linha-item h3 {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+
+/* Navbar customizada */
+.navbar {
+    background-color: #4180AB !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.bg-primary-infe {
+    background-color: #4180AB !important;
+}
+
+
+.navbar-brand {
+    font-size: 1.25rem;
+}
+
+
+/* Offcanvas menu */
+.offcanvas-body .nav-item {
+    margin-bottom: 0.5rem;
+}
+
+
+.offcanvas-body .nav-link {
+    padding: 0.75rem 0;
+    color: #333;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+
+.offcanvas-body .nav-link:hover {
+    color: #4180AB;
+}
+
+
+.offcanvas-body .nav-link.active {
+    color: #4180AB;
+    font-weight: 500;
+}
+
+
+/* Responsividade */
+
+
+/* Tablets */
+@media (min-width: 768px) {
+    .mapa-frame iframe {
+        height: 300px;
+    }
+
+
+    .card-custom {
+        padding: 1.75rem;
+    }
+
+
+    .card-custom h2,
+    .card-custom h3 {
+        font-size: 1.2rem;
+    }
+
+
+    .activity-text p {
+        font-size: 0.95rem;
+    }
+
+
+    .alert-number h4 {
+        font-size: 2rem;
+    }
+
+
+    .linha-item {
+        padding: 1.5rem 1rem;
+        min-height: 100px;
+    }
+
+
+    .linha-item h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .linha-item h3 {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* Desktop */
+@media (min-width: 992px) {
+    body {
+        padding-top: 80px;
+    }
+
+
+    .main-content {
+        min-height: calc(100vh - 80px);
+    }
+
+
+    .mapa-frame iframe {
+        height: 350px;
+    }
+
+
+    .card-custom {
+        padding: 2rem;
+    }
+
+
+    .card-custom h2,
+    .card-custom h3 {
+        font-size: 1.3rem;
+    }
+
+
+    .activity-item {
+        padding: 0.75rem 0;
+    }
+
+
+    .activity-text p {
+        font-size: 1rem;
+    }
+
+
+    .chart-container {
+        min-height: 250px;
+    }
+
+
+    .alert-number h4 {
+        font-size: 2.2rem;
+    }
+
+
+    .linha-item {
+        padding: 2rem 1.5rem;
+        min-height: 120px;
+    }
+
+
+    .linha-item h2 {
+        font-size: 2rem;
+    }
+
+
+    .linha-item h3 {
+        font-size: 1rem;
+    }
+}
+
+
+/* Desktop grande */
+@media (min-width: 1200px) {
+    .container-fluid {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+
+    .mapa-frame iframe {
+        height: 400px;
+    }
+
+    .alert-number h4 {
+        font-size: 2.5rem;
+    }
+
+
+    .linha-item h2 {
+        font-size: 2.25rem;
+    }
+}
+
+
+/* Melhorias de acessibilidade e interação */
+.card-custom:focus-within {
+    outline: 2px solid #4180AB;
+    outline-offset: 2px;
+}
+
+
+.linha-item {
+    transition: background-color 0.2s ease;
+}
+
+
+.linha-item:hover {
+    filter: brightness(1.1);
+}
+
+
+/* Animações suaves */
+@media (prefers-reduced-motion: no-preference) {
+
+
+    .card-custom,
+    .linha-item,
+    .nav-link {
+        transition: all 0.2s ease;
+    }
+}
+
+
+/* Estados de loading para o gráfico */
+.chart-container:empty::before {
+    content: "Carregando gráfico...";
+    color: #4180AB;
+    font-style: italic;
+}
+
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+
+    .card-custom {
+        padding: 1.25rem;
+    }
+
+
+    .card-custom h2,
+    .card-custom h3 {
+        font-size: 1rem;
+    }
+
+
+    .activity-item {
+        gap: 0.5rem;
+    }
+
+
+    .activity-text p {
+        font-size: 0.85rem;
+    }
+
+
+    .alert-content {
+        gap: 0.75rem;
+    }
+
+
+    .alert-number h4 {
+        font-size: 1.5rem;
+    }
+
+
+    .linha-item {
+        padding: 1rem 0.5rem;
+        min-height: 70px;
+    }
+
+
+    .linha-item h2 {
+        font-size: 1.4rem;
+    }
+
+
+    .linha-item h3 {
+        font-size: 0.8rem;
+    }
+}

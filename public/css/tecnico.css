@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.flex {
+    display: flex;
+}
+
+.agendar {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agendar h2 {
+    font-size: 25px;
+    color: #4180AB;
+    margin-bottom: 20px;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #4a90c2;
+    color: white;
+    border-radius: 20px;
+    margin-top: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.dropAzul {
+    background-color: #4a90c2 !important;
+    color: white !important;
+    border-radius: 20px !important;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+#confirmar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #4a90c2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.checklist {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.checklist h2 {
+    font-size: 25px;
+    color: #4180AB;
+    margin-bottom: 20px;
+}
+
+.bg-primary-infa {
+    background-color: #4180AB !important;
+}
+
+.agendar label {
+    color: #004A98;
+    font-weight: 500;
+    padding-top: 0px;
+    margin-top: 10px;
+}
+
+.checklist label {
+    color: #004A98;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
+.comentario {
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 600px) {
+    /* .agendar {
+        max-width: 100%;
+    } */
+
+    .container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        justify-content: center;
+    }
+}

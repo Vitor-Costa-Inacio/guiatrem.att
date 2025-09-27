@@ -1,0 +1,108 @@
+.flex {
+    display: flex;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #FFFFFF;
+}
+
+.filtro {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filtro h2 {
+    font-size: 25px;
+    color: #4180AB
+}
+
+.filtro label {
+    color: #004A98;
+    font-weight: 500;
+    padding-top: 10px;
+}
+
+select,
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: #4a90c2;
+    color: white;
+    border-radius: 20px;
+    margin-top: 5px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+.historico {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #EAEAEA;
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.historico p {
+    color: #004A98;
+    font-weight: 500;
+    padding-top: 0px;
+}
+
+.historico hr {
+    height: 2px;
+    /* Espessura da linha */
+    border: none;
+    /* Remove a borda padrão */
+    background-color: #004A98;
+    /* Cor de fundo */
+}
+
+#confirmar {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    background-color: #4a90c2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dropAzul {
+    background-color: #4a90c2 !important;
+    color: white !important;
+    border-radius: 20px !important;
+}
+
+.bg-primary-infa {
+    background-color: #4180AB !important;
+}
+
+@media screen and (min-width: 600px) {
+
+    .container {
+        position: absolute;
+        justify-content: center;
+        left: 0;
+        right: 0;
+
+    }
+
+
+
+}
