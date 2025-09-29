@@ -21,7 +21,7 @@ body {
 .container {
     flex: 1; /* Permite que o conteúdo principal ocupe o espaço restante */
     width: 100%;
-    max-width: 100% ; /* Remove limite de largura para tela cheia */
+    max-width: 100%; /* Remove limite de largura para tela cheia */
     margin: 0; /* Remove margem para ocupar toda a largura */
     padding: 1rem 2rem; /* Espaçamento lateral maior */
 }
@@ -30,7 +30,7 @@ body {
     width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
-    background-color: #EAEAEA;
+    background-color: #EAEAEA; 
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
