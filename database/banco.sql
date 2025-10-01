@@ -14,28 +14,17 @@ CREATE TABLE usuario(
 
 CREATE TABLE trem(
     id_trem INT PRIMARY KEY AUTO_INCREMENT,
-    linha_trem VARCHAR(50) NOT NULL
+    linha_trem ENUM('amarela', 'azul', 'vermelha', 'verde') NOT NULL
 );
 
-CREATE TABLE manutencao(
+CREATE TABLE manutencao (
     id_manutencao INT PRIMARY KEY AUTO_INCREMENT,
-    data_manutencao DATE NOT NULL,
-    tipo_manutencao VARCHAR(50),
-    descricao_manutencao VARCHAR(100) NOT NULL,
-    observacao_manutencao VARCHAR(200),
-    status_manutencao VARCHAR(50) NOT NULL,
-    fk_trem INT NOT NULL, 
-    fk_usuario INT NOT NULL,
-    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_atualizacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    tipo_manutencao ENUM('preventiva', 'corretiva') NOT NULL,
+    prioridade ENUM('baixa', 'média', 'alta', 'urgente') NOT NULL,
+    servico TEXT NOT NULL,
+    data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    fk_trem INT NOT NULL,
+    fk_linha ENUM('amarela', 'azul', 'vermelha', 'verde') NOT NULL,
     FOREIGN KEY (fk_trem) REFERENCES trem(id_trem),
-    FOREIGN KEY (fk_usuario) REFERENCES usuario(id_usuario)
+    FOREIGN KEY (fk_linha) REFERENCES trem(id_linha)
 );
-
--- Inserir dados de exemplo para trens
-INSERT INTO trem (linha_trem) VALUES
-('Linha Amarela'),
-('Linha Azul'),
-('Linha Verde'),
-('Linha Vermelha');
-
