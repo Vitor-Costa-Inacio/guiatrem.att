@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $host = $_POST['host'] ?? 'localhost';
     $dbname = $_POST['dbname'] ?? 'guiatrem';
     $username = $_POST['username'] ?? 'root';
-    $password = $_POST['password'] ?? '';
+    $password = $_POST['password'] ?? 'root';
     
     try {
         // Testar conexão

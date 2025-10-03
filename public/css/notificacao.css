@@ -1,9 +1,8 @@
 body {
   font-family: Arial, sans-serif;
-
   margin: 0 auto;
   padding: 20px;
-  background-color: #FFFFFF;
+  background-color: #f8f9fa;
 }
 
 .container {
@@ -11,17 +10,67 @@ body {
   max-width: auto;
 }
 
-.notification1 {
-  background-color: #ccc;
+/* Estilos para notificações não lidas (cinza escuro) */
+.notification-unread {
+  background-color: #6c757d;
+  color: white;
   border-radius: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  margin-top: 50px;
   padding: 15px;
-  border-left: 5px solid #ccc;
+  border-left: 5px solid #495057;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.notification1 .header {
+.notification-unread:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.notification-unread .header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.notification-unread .time {
+  color: #dee2e6;
+  font-size: 0.9em;
+}
+
+.notification-unread p {
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.notification-unread .message {
+  color: white;
+}
+
+/* Estilos para notificações lidas (branco) */
+.notification-read {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  border-left: 5px solid #e9ecef;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.notification-read:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.notification-read .header {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
@@ -29,59 +78,171 @@ body {
   margin-bottom: 10px;
 }
 
-.notification1 .time {
-  color: #888;
+.notification-read .time {
+  color: #6c757d;
+  font-size: 0.9em;
 }
 
-.notification1 p {
+.notification-read p {
   margin: 0 0 10px 0;
-  justify-content: center;
+  line-height: 1.5;
+}
+
+.notification-read .message {
+  color: #495057;
+}
+
+/* Estilos para ações das notificações */
+.notification-actions {
   display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.notification1 a {
-  text-decoration: none;
-  color: #2a5d8f;
+.notification-read .notification-actions {
+  border-top: 1px solid #e9ecef;
+}
+
+.notification-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-mark-read {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.btn-mark-read:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.notification-read .btn-delete {
+  background-color: #dc3545;
+  color: white;
+}
+
+.notification-read .btn-delete:hover {
+  background-color: #c82333;
+}
+
+/* Indicador de tipo de notificação */
+.notification-type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.7em;
   font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
 }
 
-.notification {
-  background-color: #fff;
-  border-radius: 15px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-  padding: 15px;
-  border-left: 5px solid #ccc;
+.type-info {
+  background-color: #17a2b8;
+  color: white;
 }
 
-.notification .header {
-  display: flex;
-  justify-content: space-between;
-  font-weight: bold;
-  color: #2a5d8f;
-  margin-bottom: 10px;
+.type-warning {
+  background-color: #ffc107;
+  color: #212529;
 }
 
-.notification .time {
-  color: #888;
+.type-danger {
+  background-color: #dc3545;
+  color: white;
 }
 
-.notification p {
-  margin: 0 0 10px 0;
-  justify-content: center;
-  display: flex;
+.type-success {
+  background-color: #28a745;
+  color: white;
 }
 
-.notification a {
-  text-decoration: none;
-  color: #2a5d8f;
-  font-weight: bold;
-}
-
+/* Estilos da navbar */
 .navbar {
   background-color: #4180AB !important;
 }
 
 .bg-primary {
   background-color: #4180AB !important;
+}
+
+/* Badge de notificações */
+#notificationBadge {
+  font-size: 0.7em;
+  min-width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Animação de loading */
+.spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .notification-unread,
+  .notification-read {
+    margin-bottom: 15px;
+    padding: 12px;
+  }
+  
+  .notification-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .notification-actions button {
+    width: 100%;
+  }
+}
+
+/* Animação de entrada das notificações */
+.notification-enter {
+  animation: slideInFromTop 0.3s ease-out;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efeito de remoção */
+.notification-removing {
+  animation: slideOutToRight 0.3s ease-in forwards;
+}
+
+@keyframes slideOutToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
 }
