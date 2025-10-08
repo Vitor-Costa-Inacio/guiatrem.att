@@ -1,3 +1,4 @@
+colocar para rodar
 <?php include "conex_sensor.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">

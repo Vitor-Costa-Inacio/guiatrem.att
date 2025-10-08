@@ -1,3 +1,4 @@
+colocar para rodar
 <?php
 include "conex_sensor.php";
 
@@ -26,3 +27,4 @@ if (!empty($_POST['id_sensor']) && !empty($_POST['sensor_01']) && !empty($_POST[
 
 
 ?>
+

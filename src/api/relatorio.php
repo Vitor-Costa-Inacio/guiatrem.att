@@ -60,6 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         responderJSON(true, "Relatório gerado com sucesso.", $dados);
 
+function geraPDF()
+        const jsonData = { name: "John Doe", age: 30, city: "Joinville" };
+
+const pdf = new jsPDF(); pdf.setFont("Helvetica", "normal"); pdf.setFontSize(12);
+
+Object.entries(jsonData).forEach(([key, value], index) => { pdf.text(${key}: ${value}, 10, 10 + index * 10); });
+
+pdf.save("output.pdf");
+
     } catch (Exception $e) {
         responderJSON(false, "Erro ao gerar relatório: " . $e->getMessage(), null, 500);
     }

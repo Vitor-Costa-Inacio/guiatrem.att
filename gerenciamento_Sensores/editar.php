@@ -1,3 +1,4 @@
+colocar para rodar
 <?php
 include "conex_sensor.php";
 
