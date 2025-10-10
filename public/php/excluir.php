@@ -1,4 +1,3 @@
-colocar para rodar
 <?php
 include "conex_sensor.php";
 
@@ -9,7 +8,7 @@ if (isset($_GET['id'])) {
     if ($conn->query($sql) === TRUE) {
         header("Location: index.php?msg=Sensor excluído com sucesso!");
     } else {
-        header("Location: index.php?erro=Erro ao excluir sensor.");
+        header("Location: index.php?erro=Erro ao excluir sensor: " . $conn->error);
     }
 } else {
     header("Location: index.php?erro=ID inválido.");

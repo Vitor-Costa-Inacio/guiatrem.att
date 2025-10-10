@@ -4,7 +4,8 @@
  */
 
 // Incluir configurações
-require_once 'config/database.php';
+require_once __DIR__ . '/../config/config.php';
+require_once __DIR__ . '/../config/database.php';
 
 // Configurar CORS
 configurarCORS();
@@ -13,15 +14,15 @@ configurarCORS();
 session_start();
 
 // Verificar se o usuário está logado
-include_once 'src/auth/check_session.php';
+include_once __DIR__ . '/../src/auth/check_session.php';
 
 if (verificarSessao()) {
     // Se estiver logado, redirecionar para dashboard
-    header('Location: public/html/dashboard.html');
+    header('Location: html/dashboard.html');
     exit();
 } else {
     // Se não estiver logado, redirecionar para login
-    header('Location: public/html/login.html');
+    header('Location: html/login.html');
     exit();
 }
 ?>

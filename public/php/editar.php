@@ -1,15 +1,14 @@
-colocar para rodar
 <?php
 include "conex_sensor.php";
 
-if(!isset($_GET[id])){
-    header("Location: index.php?erro=ID invalido.");
+if(!isset($_GET['id'])){
+    header("Location: index.php?erro=ID inválido.");
     exit;
 }
 
 $id_sensor = $_GET['id'];
 $sql = "SELECT * FROM sensores WHERE id_sensor=$id_sensor";
-$result=$conn->query($sql);
+$result = $conn->query($sql);
 
 if ($result->num_rows == 0){
     header("Location: index.php?erro=Sensor não encontrado.");
@@ -23,7 +22,14 @@ $sensor = $result->fetch_assoc();
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Sensor</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        form { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        input, select { margin: 5px; padding: 8px; }
+        button { padding: 8px 15px; margin: 5px; }
+    </style>
 </head>
 <body>
 
@@ -42,10 +48,8 @@ $sensor = $result->fetch_assoc();
     </select><br><br>
 
     <button type="submit">Atualizar</button>
-    <a href="index.php">Cancelar</a>
+    <a href="index.php"><button type="button">Cancelar</button></a>
 </form>
 
 </body>
 </html>
-
-?>

@@ -1,10 +1,21 @@
-colocar para rodar
 <?php include "conex_sensor.php"; ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciamento de Sensores</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .success { color: green; padding: 10px; background: #f0fff0; border: 1px solid green; }
+        .error { color: red; padding: 10px; background: #fff0f0; border: 1px solid red; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        form { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        input, select { margin: 5px; padding: 8px; }
+        button { padding: 8px 15px; margin: 5px; }
+    </style>
 </head>
 <body>
 
@@ -12,11 +23,11 @@ colocar para rodar
 
 <!-- Mensagens -->
 <?php
-if (isset($_GET['msg'])) echo "<p style='color:green;'>".$_GET['msg']."</p>";
-if (isset($_GET['erro'])) echo "<p style='color:red;'>".$_GET['erro']."</p>";  
+if (isset($_GET['msg'])) echo "<div class='success'>".$_GET['msg']."</div>";
+if (isset($_GET['erro'])) echo "<div class='error'>".$_GET['erro']."</div>";  
 ?>
 
-<!-- Formulário -->
+<!-- Formulário de Cadastro -->
 <h2>Cadastrar novo sensor</h2>
 <form action="salvar.php" method="POST">
     Nome do Sensor: <input type="text" name="sensor_01" required><br><br>
@@ -33,9 +44,9 @@ if (isset($_GET['erro'])) echo "<p style='color:red;'>".$_GET['erro']."</p>";
 
 <hr>
 
-<!-- Lista -->
+<!-- Lista de Sensores -->
 <h2>Lista de Sensores</h2>
-<table border="1" cellpadding="5" cellspacing="0">
+<table>
     <tr>
         <th>ID</th>
         <th>Nome</th>

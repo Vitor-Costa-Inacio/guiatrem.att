@@ -1,4 +1,3 @@
-colocar para rodar
 <?php
 include "conex_sensor.php";
 
@@ -19,12 +18,9 @@ if (!empty($_POST['id_sensor']) && !empty($_POST['sensor_01']) && !empty($_POST[
     if($conn->query($sql) === TRUE) {
         header("Location: index.php?msg=Sensor atualizado com sucesso!");
     } else {
-        header("Location: index.php?erro=Erro ao atualizar sensor.");
+        header("Location: index.php?erro=Erro ao atualizar sensor: " . $conn->error);
     }
 } else {
     header("Location: index.php?erro=Preencha os campos obrigatórios.");
 }
-
-
 ?>
-
