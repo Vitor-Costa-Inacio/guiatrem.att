@@ -16,17 +16,22 @@ new Chart(ctx, {
         }]
     },
     options: {
-        cutout: '70%',
+        cutout: '65%',
         plugins: {
             legend: {
                 position: 'right',
                 labels: {
                     usePointStyle: true,
                     pointStyle: 'circle',
-                    color: 'black'
+                    color: 'black',
+                    font: {
+                        size: 13
+                    }
                 }
             }
-        }
+        },
+        responsive: true,
+        maintainAspectRatio: true
     }
 });
 
@@ -37,36 +42,32 @@ const alertas = [
     { mensagem: "Trem 003 - Linha Verde manutenção solicitada", tipo: "info" }
 ];
 
-
 const alertMessage = document.getElementById('alert-message');
 const alertTime = document.getElementById('alert-time');
-
 
 function mostrarAlerta() {
     if (!alertMessage || !alertTime) return;
 
     const alertaAleatorio = alertas[Math.floor(Math.random() * alertas.length)];
-
     alertMessage.textContent = alertaAleatorio.mensagem;
     alertTime.textContent = new Date().toLocaleTimeString();
-
-    const cardAlerta = document.querySelector('.alertas');
-    if (cardAlerta) {
-        cardAlerta.style.borderLeftColor =
-            alertaAleatorio.tipo === 'warning' ? '#e74c3c' :
-                alertaAleatorio.tipo === 'success' ? '#2ecc71' : '#3498db';
-    }
 }
-
 
 if (alertMessage && alertTime) {
     mostrarAlerta();
     setInterval(mostrarAlerta, 10000);
-};
+}
 
 function enviar() {
-    const linha = document.getElementById('linha').value;
-    const trem = document.getElementById('linha').value;
-    const manutencao = document.getElementById('linha').value;
-    const prioridade = document.getElementById('linha').value;
+    const linha = document.querySelector('.form-select').value;
+    const trem = document.querySelectorAll('.form-select')[1].value;
+    const manutencao = document.querySelectorAll('.form-select')[2].value;
+    const prioridade = document.querySelectorAll('.form-select')[3].value;
+    
+    if (linha && trem && manutencao && prioridade) {
+        alert('Solicitação enviada com sucesso!');
+    } else {
+        alert('Por favor, preencha todos os campos.');
+    }
+    return false;
 }

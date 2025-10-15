@@ -3,7 +3,27 @@
 }
 
 .text-primary {
-    color: #4180AB ;
+    color: #4180AB !important;
+}
+
+.btn-primary {
+    background-color: #4180AB !important;
+    border-color: #4180AB !important;
+}
+
+.btn-primary:hover {
+    background-color: #366b8f !important;
+    border-color: #366b8f !important;
+}
+
+.btn-outline-secondary {
+    color: #4180AB !important;
+    border-color: #4180AB !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #4180AB !important;
+    color: white !important;
 }
 
 body {
@@ -14,7 +34,6 @@ body {
     background-color: #f8f9fa;
 }
 
-
 .login {
     padding: 2rem;
     width: 100%;
@@ -24,16 +43,14 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 #loginButton {
-    background-color: var(--colorP);
+    background-color: #4180AB;
     border: none;
     padding: 0.5rem 2rem;
     border-radius: 50px;
     width: 100%;
-
 }
 
 .loginIN {
@@ -48,7 +65,6 @@ body {
 }
 
 /* ALTERAÇÕES SOBREPOSTAS AO BOOTSTRAP */
-
 .form-control {
     border-radius: 0 25px 25px 0 !important;
 }
@@ -58,5 +74,22 @@ body {
     background-color: rgb(165, 162, 162) !important;
 }
 
+/* Foco nos inputs com a cor do tema */
+.form-control:focus {
+    border-color: #4180AB !important;
+    box-shadow: 0 0 0 0.2rem rgba(65, 128, 171, 0.25) !important;
+}
 
+/* Card com borda sutil da cor tema */
+.card {
+    border: 1px solid rgba(65, 128, 171, 0.1) !important;
+}
 
+/* Links com a cor do tema */
+a {
+    color: #4180AB !important;
+}
+
+a:hover {
+    color: #366b8f !important;
+}

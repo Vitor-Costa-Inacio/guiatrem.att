@@ -1,161 +1,211 @@
+:root {
+    --primary-color: #4180AB;
+    --secondary-color: #EAEAEA;
+    --accent-color: #2c5a7a;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+}
+
 * {
     margin: 0;
     padding: 0;
-}
-
-.container-info {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    box-sizing: border-box;
 }
 
 body {
-    max-width: 900px !important;
+    background-color: #f5f7fa;
+    color: var(--text-color);
+    padding-top: 80px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.info {
-    /* background-color: red; */
-    margin-top: 60px;
+/* APENAS AJUSTE DA POSIÇÃO DO TÍTULO */
+.title-section {
+    margin-top: 2rem; /* Aumentei a margem superior */
+    padding-top: 2rem; /* Aumentei o padding superior */
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Cards de Relatórios */
+.card-relatorio {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    border: none;
+    overflow: hidden;
+    height: 100%;
+}
+
+.card-relatorio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.card-relatorio .card-body {
+    padding: 1.5rem;
     display: flex;
-    gap: 20px;
-    width: 51.5rem;
-    /* 824px */
+    flex-direction: column;
+    height: 100%;
 }
 
-.box {
-    background-color: #EAEAEA;
-    border-radius: 25px;
-    width: 25rem;
+.card-relatorio .card-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.card-relatorio .card-text {
+    flex-grow: 1;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.card-relatorio .btn-download {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 10px;
-    padding: 20px;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-decoration: none;
 }
 
-.box-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 60px;
+.card-relatorio .btn-download:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
 }
 
-.box h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #4180AB;
+.card-relatorio .card-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
     text-align: center;
 }
 
-
-.img img {
-    width: 24px;
-    /* ou ajuste conforme necessário */
-    height: 24px;
-
-}
-
-.bg-primary-infi {
-    background-color: #4180AB !important;
-}
-
-#text h1 {
-    font-weight: bold;
+/* Estatísticas nos cards */
+.stats-container {
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 1rem;
 }
 
-#text h6 {
-    font-weight: normal;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-.txt-container {
-    max-width: 900px;
-    width: 100%;
-    justify-content: space-between;
-    gap: 20px;
-    display: flex;
-}
-
-.txt {
-    width: 50%;
-    padding: 1rem;
-    background-color: #EAEAEA;
-    border-radius: 35px;
-
-}
-
-.txt h1 {
+.stat-item {
     text-align: center;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    color: #4180AB;
+    flex: 1;
 }
 
-.txt h6 {
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+/* Seção Missão e Visão */
+.mission-vision-section {
+    background-color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-top: 3rem;
+}
+
+.mission-vision-section h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.mission-vision-section p {
+    line-height: 1.7;
     text-align: justify;
+    margin-bottom: 1rem;
+}
+
+/* Restante do CSS permanece igual */
+.navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bg-primary-emphasis {
+    background-color: var(--primary-color) !important;
 }
 
 .bg-primary-infi {
-    background-color: #4180AB !important;
+    background-color: var(--primary-color) !important;
 }
 
-
-@media screen and (max-width: 600px) {
-    *{
-        margin: 0;
-        padding: 0;
-        
+/* Responsividade */
+@media (max-width: 768px) {
+    .title-section {
+        margin-top: 1.5rem; /* Ajuste para mobile */
+        padding-top: 1.5rem;
     }
     
-    .info {
+    .stats-container {
         flex-direction: column;
-        gap: 1px;
-        align-items: center;
-        width: 100vh;
+        gap: 0.5rem;
     }
-
-    .esquerda {
-        width: 100%;
-        height: 6.25rem;
-    }
-
-    .direito {
-        width: 100%;
-        height: 6.25rem;
-    }
-
     
-
-    .box {
-        height: 10%;
-      
-        width: 100%;
+    .stat-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
-
-    .box-content {
-        width: 100%;
-        gap: 10px;
-       
+    
+    .mission-vision-section {
+        padding: 1.5rem;
     }
-
-    .box-content h1 {
-        font-size: 1rem;
-        font-weight: bold;
-    }
-
-    .txt h1 {
-        font-size: 1.8rem;
-    }
-
-    .txt h6 {
-        font-size: 1rem;
-    }
-
-    .txt-container{
-        display: none;
-        
+    
+    .section-title {
+        font-size: 1.5rem;
     }
 }
+
+@media (max-width: 576px) {
+    .title-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+    
+    .mission-vision-section {
+        padding: 1rem;
+    }
+    
+    .card-relatorio .card-body {
+        padding: 1rem;
+    }
+    
+    .card-relatorio .card-title {
+        font-size: 1.1rem;
