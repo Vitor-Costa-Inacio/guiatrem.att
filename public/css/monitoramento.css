@@ -4,7 +4,8 @@
     align-items: stretch;
 }
 
-html, body {
+html,
+body {
     height: 100%;
     margin: 0;
     overflow-x: hidden;
@@ -46,7 +47,6 @@ body {
     grid-column: 1 / -1;
 }
 
-/* GRÁFICO REDUZIDO MODERADAMENTE */
 .grafico-container {
     display: flex;
     justify-content: center;
@@ -113,27 +113,36 @@ body {
     margin-bottom: 20px;
 }
 
-#preventivas, #corretivas {
+#preventivas,
+#corretivas {
     text-align: center;
     color: #004A98;
     margin-top: 15px;
 }
 
-#preventivas { margin-right: 10px; }
-#corretivas { margin-left: 10px; }
+#preventivas {
+    margin-right: 10px;
+}
 
-#preventivas h1, #corretivas h1 {
+#corretivas {
+    margin-left: 10px;
+}
+
+#preventivas h1,
+#corretivas h1 {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-#preventivas hr, #corretivas hr {
+#preventivas hr,
+#corretivas hr {
     margin: 5px 0;
     border: 1px solid #004A98;
 }
 
-#preventivas h2, #corretivas h2 {
+#preventivas h2,
+#corretivas h2 {
     font-size: 1.1rem;
     color: #004A98;
     margin: 0;
@@ -195,8 +204,14 @@ body {
     gap: 15px;
 }
 
-.linha-nome { font-weight: 500; }
-.data { font-weight: 500; white-space: nowrap; }
+.linha-nome {
+    font-weight: 500;
+}
+
+.data {
+    font-weight: 500;
+    white-space: nowrap;
+}
 
 .status-indicator {
     width: 14px;
@@ -205,9 +220,17 @@ body {
     display: inline-block;
 }
 
-.concluida { background-color: #009C4E; }
-.andamento { background-color: #FCC540; }
-.nao-iniciada { background-color: #FFFFFF; }
+.concluida {
+    background-color: #009C4E;
+}
+
+.andamento {
+    background-color: #FCC540;
+}
+
+.nao-iniciada {
+    background-color: #FFFFFF;
+}
 
 .legenda {
     display: flex;
@@ -265,7 +288,8 @@ body {
     display: block;
 }
 
-select, input[type="text"] {
+select,
+input[type="text"] {
     width: 100%;
     padding: 10px;
     border: none;
@@ -315,34 +339,34 @@ input::placeholder {
     .container {
         padding: 0.5rem 1rem;
     }
-    
+
     .flex {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .localizacao-frota {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .grafico-container {
         min-height: 220px;
         max-height: 240px;
     }
-    
+
     .trem {
         grid-template-columns: 1fr;
         gap: 10px;
         text-align: center;
     }
-    
+
     .legenda {
         flex-direction: column;
         gap: 10px;
         align-items: center;
     }
-    
+
     .localizacao-frota h2,
     .alerta h2,
     .manutencoes-andamento h2,
@@ -357,16 +381,16 @@ input::placeholder {
     .container {
         padding: 1rem 1.5rem;
     }
-    
+
     .flex {
         flex-wrap: wrap;
     }
-    
+
     .manutencoes-andamento,
     .gasto-mensal {
         flex: 1 1 calc(50% - 10px);
     }
-    
+
     .grafico-container {
         min-height: 230px;
         max-height: 260px;
@@ -377,7 +401,7 @@ input::placeholder {
     .container {
         padding: 1rem 3rem;
     }
-    
+
     .grafico-container {
         min-height: 240px;
         max-height: 270px;
@@ -388,7 +412,7 @@ input::placeholder {
     .container {
         padding: 1rem 4rem;
     }
-    
+
     .grafico-container {
         min-height: 250px;
         max-height: 280px;
