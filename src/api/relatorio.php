@@ -60,15 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         responderJSON(true, "Relatório gerado com sucesso.", $dados);
 
-function geraPDF()
-        const jsonData = { name: "John Doe", age: 30, city: "Joinville" };
-
-const pdf = new jsPDF(); pdf.setFont("Helvetica", "normal"); pdf.setFontSize(12);
-
-Object.entries(jsonData).forEach(([key, value], index) => { pdf.text(${key}: ${value}, 10, 10 + index * 10); });
-
-pdf.save("output.pdf");
-
     } catch (Exception $e) {
         responderJSON(false, "Erro ao gerar relatório: " . $e->getMessage(), null, 500);
     }
@@ -249,15 +240,18 @@ function gerarRelatorioCustos($db) {
                        tipo_manutencao,
                        COUNT(*) as quantidade,
                        CASE 
-                         WHEN tipo_manutencao = 'Preventiva' THEN COUNT(*) * {$custo_medio_preventiva}
-                         WHEN tipo_manutencao = 'Corretiva' THEN COUNT(*) * {$custo_medio_corretiva}
+                         WHEN tipo_manutencao = 'Preventiva' THEN COUNT(*) * :custo_preventiva
+                         WHEN tipo_manutencao = 'Corretiva' THEN COUNT(*) * :custo_corretiva
                        END as custo_estimado
                      FROM manutencao 
                      WHERE status_manutencao = 'Concluída'
                      GROUP BY tipo_manutencao";
 
     $stmt = $db->prepare($query_custos);
-    $stmt->execute();
+    $stmt->execute([
+        ':custo_preventiva' => $custo_medio_preventiva,
+        ':custo_corretiva' => $custo_medio_corretiva
+    ]);
     $custos_por_tipo = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Custos por linha
@@ -265,15 +259,18 @@ function gerarRelatorioCustos($db) {
                              t.linha_trem,
                              COUNT(CASE WHEN m.tipo_manutencao = 'Preventiva' THEN 1 END) as preventivas,
                              COUNT(CASE WHEN m.tipo_manutencao = 'Corretiva' THEN 1 END) as corretivas,
-                             (COUNT(CASE WHEN m.tipo_manutencao = 'Preventiva' THEN 1 END) * {$custo_medio_preventiva} +
-                              COUNT(CASE WHEN m.tipo_manutencao = 'Corretiva' THEN 1 END) * {$custo_medio_corretiva}) as custo_total
+                             (COUNT(CASE WHEN m.tipo_manutencao = 'Preventiva' THEN 1 END) * :custo_preventiva +
+                              COUNT(CASE WHEN m.tipo_manutencao = 'Corretiva' THEN 1 END) * :custo_corretiva) as custo_total
                            FROM trem t
                            LEFT JOIN manutencao m ON t.id_trem = m.fk_trem AND m.status_manutencao = 'Concluída'
                            GROUP BY t.linha_trem
                            ORDER BY custo_total DESC";
 
     $stmt = $db->prepare($query_custos_linha);
-    $stmt->execute();
+    $stmt->execute([
+        ':custo_preventiva' => $custo_medio_preventiva,
+        ':custo_corretiva' => $custo_medio_corretiva
+    ]);
     $custos_por_linha = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // Eficiência (relação preventiva/corretiva)
@@ -307,5 +304,40 @@ function gerarRelatorioCustos($db) {
         'data_geracao' => date('Y-m-d H:i:s')
     );
 }
-?>
 
+/**
+ * Função para responder em formato JSON
+ */
+function responderJSON($sucesso, $mensagem, $dados = null, $statusCode = 200) {
+    http_response_code($statusCode);
+    header('Content-Type: application/json');
+    
+    echo json_encode([
+        'sucesso' => $sucesso,
+        'mensagem' => $mensagem,
+        'dados' => $dados
+    ]);
+    exit;
+}
+
+/**
+ * Função para configurar CORS
+ */
+function configurarCORS() {
+    header('Access-Control-Allow-Origin: *');
+    header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
+    header('Access-Control-Allow-Headers: Content-Type, Authorization');
+    
+    if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+        exit(0);
+    }
+}
+
+/**
+ * Função para incluir arquivos necessários
+ */
+function incluirArquivos() {
+    // Inclui arquivos comuns necessários
+    // Esta função pode ser expandida conforme necessário
+}
+?>

@@ -73,6 +73,5 @@ function obterDadosRequisicao() {
     }
     
     return $data;
-}
+} 
 ?>
-

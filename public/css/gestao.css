@@ -1,35 +1,27 @@
-.flex {
-    display: flex;
-}
-
+/* Layout Principal */
 .mapa-frame {
     width: 100%;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin-top: 80px;
+    margin-bottom: 2rem;
     border-radius: 12px;
-    padding: 25px;
+    padding: 15px;
 }
 
-.mapa-frame iframe {
-    width: 100%;
-    height: 250px;
-    border: 0;
-    border-radius: 12px;
-    margin-top: 50px;
-    margin-bottom: 25px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
+/* Estilo das Linhas (50% da página) */
 .linhas {
     background-color: #EAEAEA;
     border-radius: 8px;
-    padding: 10px 20px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 300px;
 }
 
 .linhas h2 {
     font-size: 25px;
     color: #4180AB;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .linha-container {
@@ -38,11 +30,33 @@
     align-items: center;
     margin-bottom: 15px;
     background-color: white;
-    padding: 15px;
+    padding: 18px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.linha-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.linha-container[data-linha="amarela"] {
+    border-left-color: #FFD700;
+}
+
+.linha-container[data-linha="azul"] {
+    border-left-color: #1E90FF;
+}
+
+.linha-container[data-linha="verde"] {
+    border-left-color: #2E8B57;
+}
+
+.linha-container[data-linha="vermelha"] {
+    border-left-color: #DC143C;
 }
 
 .linha-nome {
@@ -50,13 +64,11 @@
     font-size: 18px;
 }
 
-
 .status {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
-
 
 .status-indicator {
     width: 16px;
@@ -65,11 +77,9 @@
     display: inline-block;
 }
 
-
 .ativa {
     background-color: #4CAF50;
 }
-
 
 .inativa {
     background-color: #F44336;
@@ -79,122 +89,389 @@
     color: #FFD700;
 }
 
-
 .azul {
     color: #1E90FF;
 }
-
 
 .verde {
     color: #2E8B57;
 }
 
-
 .vermelha {
     color: #DC143C;
 }
 
+/* Trens em Manutenção (25% da página) */
 .manutencoes {
     background-color: #EAEAEA;
     border-radius: 10px;
     padding: 25px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-right: 5.5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 250px;
 }
 
 .manutencoes h2 {
-    font-size: 20px;
-    color: #4180AB
+    font-size: 22px;
+    color: #4180AB;
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.manutencoes p {
-    margin-top: 10px;
+.manutencao-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.manutencao-count {
+    color: red;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 25px;
 }
 
 .botao {
     display: inline-block;
     background-color: #3498db;
     color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 12px 24px;
+    border-radius: 6px;
     text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s ease;
     cursor: pointer;
     border: none;
     text-align: center;
+    width: 100%;
+    max-width: 200px;
 }
 
+.botao:hover {
+    background-color: #2980b9;
+    color: white;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Alertas (25% da página) */
 .alertas {
     background-color: #EAEAEA;
     border-radius: 10px;
     padding: 25px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-right: 5.5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 250px;
 }
 
 .alertas h2 {
-    font-size: 20px;
-    color: #4180AB
+    font-size: 22px;
+    color: #4180AB;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.alerta-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 #alert-message {
-    font-size: 1.2em;
+    font-size: 1.3em;
     margin: 15px 0;
+    color: #333;
+    font-weight: 500;
 }
 
 #alert-time {
     color: #7f8c8d;
-    font-size: 0.9em;
+    font-size: 0.95em;
+    margin-top: 10px;
 }
 
 .bg-primary-infe {
     background-color: #4180AB !important;
 }
 
+/* Controles de Rota (50% da página) */
+.controles-rota {
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 350px;
+}
 
-@media screen and (min-width: 600px) {
+.controles-rota h2 {
+    color: #4180AB;
+    margin-bottom: 25px;
+    font-size: 25px;
+    font-weight: 600;
+}
 
+.estacoes-lista {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid #dee2e6;
+}
+
+.estacao-item-rota {
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 6px;
+    border-left: 4px solid #4180AB;
+    font-weight: 500;
+}
+
+/* Lista de Estações (50% da página) */
+.lista-estacoes {
+    background-color: #EAEAEA;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 350px;
+}
+
+.lista-estacoes h2 {
+    font-size: 25px;
+    color: #4180AB;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.estacoes-container {
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.estacoes-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.estacoes-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.estacoes-container::-webkit-scrollbar-thumb {
+    background: #4180AB;
+    border-radius: 3px;
+}
+
+.estacao-item {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 4px solid #4180AB;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.estacao-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.estacao-nome {
+    font-weight: bold;
+    color: #4180AB;
+    font-size: 16px;
+}
+
+.estacao-endereco {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Marcadores do mapa */
+.marcador-estacao {
+    background-color: #e74c3c;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.marcador-temporario {
+    background-color: #3498db;
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Linhas das rotas no mapa */
+.rota-line {
+    stroke: #e74c3c;
+    stroke-width: 4;
+    stroke-dasharray: 10, 10;
+    fill: none;
+}
+
+.rota-line-shadow {
+    stroke: #3498db;
+    stroke-width: 6;
+    opacity: 0.3;
+    fill: none;
+}
+
+/* Botões */
+.btn {
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+    border-color: #f39c12;
+    color: white;
+}
+
+.btn-warning:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    border-color: #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-secondary {
+    border: 2px solid #6c757d;
+    color: #6c757d;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #6c757d;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Formulários */
+.form-control {
+    border-radius: 8px;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.form-control:focus {
+    border-color: #4180AB;
+    box-shadow: 0 0 0 0.2rem rgba(65, 128, 171, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Responsividade */
+@media screen and (min-width: 768px) {
     .mapa-frame {
-        position: absolute;
-        top: 1rem;
-        left: 0;
-        right: 0;
-        height: 400px;
-        z-index: 1;
+        margin-top: 90px;
     }
-
-    .container {
-        margin-top: 400px;
-        left: 0;
-        right: 0;
-        position: absolute;
-    }
-
-    .flex {
-        justify-content: center;
-    }
-
-    .linhas {
-        max-width: 6000vh;
+    
+    .manutencoes,
+    .alertas {
+        height: 100%;
     }
 }
 
-@media screen and (max-width: 600px) {
-
-    .mapa-frame{
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 2px;
-        width: 440px;
+@media screen and (max-width: 767px) {
+    .mapa-frame {
+        margin-top: 70px;
+        padding: 10px;
     }
+    
+    .linhas,
+    .manutencoes,
+    .alertas,
+    .controles-rota,
+    .lista-estacoes {
+        padding: 20px;
+    }
+    
+    .linha-container {
+        padding: 15px;
+    }
+    
+    .botao {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .manutencao-count {
+        font-size: 20px;
+    }
+}
 
+/* Espaçamentos consistente com dashboard */
+.container-fluid .row {
+    margin-bottom: 1.5rem;
+}
+
+.container-fluid .row:last-child {
+    margin-bottom: 0;
+}
+
+/* Ajustes de altura para manter proporções */
+@media screen and (min-width: 992px) {
+    .linhas,
+    .controles-rota,
+    .lista-estacoes {
+        min-height: 320px;
+    }
+    
+    .manutencoes,
+    .alertas {
+        min-height: 270px;
+    }
 }
