@@ -26,6 +26,10 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 .agendar h2 {
     font-size: 25px;
     color: #4180AB;

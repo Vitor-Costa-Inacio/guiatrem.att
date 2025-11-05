@@ -23,6 +23,10 @@ body {
   cursor: pointer;
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 .notification-unread:hover {
   background-color: #5a6268;
   transform: translateY(-2px);

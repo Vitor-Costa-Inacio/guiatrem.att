@@ -1,3 +1,15 @@
+:root {
+    --primary-color: #4180AB;
+    --secondary-color: #EAEAEA;
+    --accent-color: #2c5a7a;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #17a2b8;
+}
+
 .flex {
     display: flex;
     gap: 20px;
@@ -5,19 +17,24 @@
     flex-wrap: wrap;
 }
 
-html,
-body {
+html, body {
     height: 100%;
     margin: 0;
     overflow-x: hidden;
 }
 
+.main-content {
+    flex: 1;
+    padding: 1rem 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #FFFFFF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
     padding-top: 76px;
     display: flex;
     flex-direction: column;
+    color: var(--text-color);
 }
 
 .container {
@@ -29,13 +46,47 @@ body {
     box-sizing: border-box;
 }
 
+.localizacao-frota,
+.alerta,
+.manutencoes-andamento,
+.gasto-mensal,
+.manutencoes-programadas,
+.solicitar-manutencao {
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    background-color: #ffffff;
+    border: none;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.localizacao-frota:hover,
+.alerta:hover,
+.manutencoes-andamento:hover,
+.gasto-mensal:hover,
+.manutencoes-programadas:hover,
+.solicitar-manutencao:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.localizacao-frota h2,
+.alerta h2,
+.manutencoes-andamento h2,
+.gasto-mensal h2,
+.manutencoes-programadas h2,
+.solicitar-manutencao h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    color: #4180AB;
+    font-weight: 600;
+    border-bottom: 2px solid #EAEAEA;
+    padding-bottom: 0.75rem;
+}
+
+/* LOCALIZAÇÃO DA FROTA */
 .localizacao-frota {
     width: 100%;
-    margin: 20px 0;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
@@ -44,10 +95,9 @@ body {
 }
 
 .localizacao-frota h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 0;
     grid-column: 1 / -1;
+    border-bottom: 2px solid #EAEAEA;
+    padding-bottom: 0.75rem;
 }
 
 .grafico-container {
@@ -66,22 +116,8 @@ body {
     height: auto !important;
 }
 
-.alerta {
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.alerta h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 15px;
-}
-
-.alert-content {
+/* ALERTA */
+.alerta-content {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -98,21 +134,11 @@ body {
     font-size: clamp(0.9rem, 1.8vw, 1rem);
 }
 
+/* MANUTENÇÕES EM ANDAMENTO */
 .manutencoes-andamento {
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 280px;
     box-sizing: border-box;
-}
-
-.manutencoes-andamento h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 5px;
 }
 
 .manutencoes-andamento h3 {
@@ -158,22 +184,12 @@ body {
     margin: 0;
 }
 
+/* GASTO MENSAL */
 .gasto-mensal {
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex: 1;
     min-width: 280px;
     text-align: center;
     box-sizing: border-box;
-}
-
-.gasto-mensal h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 5px;
 }
 
 .gasto-mensal h3 {
@@ -189,21 +205,7 @@ body {
     margin: 0;
 }
 
-.manutencoes-programadas {
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.manutencoes-programadas h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 20px;
-}
-
+/* MANUTENÇÕES PROGRAMADAS */
 .trem {
     background-color: #4180AB;
     color: white;
@@ -263,6 +265,7 @@ body {
     gap: 5px;
 }
 
+/* HISTÓRICO */
 #historico {
     padding: 15px;
     margin: 15px 0 20px;
@@ -285,21 +288,7 @@ body {
     font-size: clamp(1rem, 2vw, 1.1rem);
 }
 
-.solicitar-manutencao {
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
-}
-
-.solicitar-manutencao h2 {
-    font-size: clamp(1.4rem, 2.5vw, 1.6rem);
-    color: #4180AB;
-    margin-bottom: 20px;
-}
-
+/* SOLICITAR MANUTENÇÃO */
 .solicitar-manutencao label {
     color: #004A98;
     font-weight: 500;

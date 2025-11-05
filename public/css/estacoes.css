@@ -28,6 +28,10 @@
     color: white;
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 .estacao-info {
     font-size: 0.9rem;
 }

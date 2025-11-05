@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #4180AB !important; 
+    --primary-color: #4180AB;
     --secondary-color: #EAEAEA;
     --accent-color: #2c5a7a;
     --text-color: #333;
@@ -236,7 +236,7 @@ body {
 
 /* HEADER - MANTIDO ORIGINAL */
 .navbar {
-    background-color: #4180AB !important;
+    background-color: #4180AB ;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -249,7 +249,6 @@ body {
 }
 
 .offcanvas-body .nav-link {
-    padding: 0.75rem 0;
     color: #333;
     transition: color 0.2s ease;
     font-size: 1rem;
@@ -257,7 +256,6 @@ body {
 
 .offcanvas-body .nav-link:hover,
 .offcanvas-body .nav-link.active {
-    color: #4180AB;
     font-weight: 500;
 }
 

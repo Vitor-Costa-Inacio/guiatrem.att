@@ -25,6 +25,10 @@ body {
     padding-top: 2rem; /* Aumentei o padding superior */
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 .section-title {
     color: var(--primary-color);
     font-weight: 700;

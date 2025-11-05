@@ -25,6 +25,10 @@ body {
     color: #4180AB
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 .filtro label {
     color: #004A98;
     font-weight: 500;
