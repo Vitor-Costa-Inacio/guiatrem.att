@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil - Guia Trem</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Alterar Senha - Guia Trem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/perfil.css">
+    <link rel="stylesheet" href="../css/alterar_senha.css">
 </head>
 
 <body>
@@ -174,30 +174,13 @@
                                 <li class="nav-item list-unstyled">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                         class="bi bi-person-circle" viewBox="0 0 16 16">
-                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                                        <path fill-rule="evenodd"
-                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
                                     </svg>
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="perfil.html">Perfil</a>
-                            </div>
-                        </div>
-                        <div class="row align-items-center">
-                            <div class="col-auto">
-                                <li class="nav-item list-unstyled">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                        class="bi bi-info-circle" viewBox="0 0 16 16">
-                                        <path
-                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                                        <path
-                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
-                                    </svg>
-                                </li>
-                            </div>
-                            <div class="col">
-                                <a class="nav-link active" aria-current="page" href="sobre.html">Sobre</a>
+                                <a class="nav-link" aria-current="page" href="perfil.html">Perfil</a>
                             </div>
                         </div>
                         <div class="mt-auto text-center py-3">
@@ -214,235 +197,221 @@
     <main class="container">
         <!-- Cabeçalho da Página -->
         <div class="page-header">
-            <h1 class="page-title">Perfil do Usuário</h1>
-            <p class="page-subtitle">Gerencie suas informações pessoais e preferências</p>
+            <h1 class="page-title">Alterar Senha</h1>
+            <p class="page-subtitle">Atualize sua senha para manter sua conta segura</p>
         </div>
 
-        <div class="row g-4">
-            <!-- Coluna da Foto e Informações Básicas -->
-            <div class="col-lg-4">
-                <div class="card profile-card">
-                    <div class="card-body text-center">
-                        <div>
-                            <i class="bi bi-person-circle"></i>
-                        </div>
-                        <h3 class="profile-name">Carlos Silva</h3>
-                        <p class="profile-role">Supervisor de Manutenção</p>
-                        <div class="profile-stats">
-                            <div class="stat-item">
-                                <div class="stat-value">24</div>
-                                <div class="stat-label">Trens Ativos</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">156</div>
-                                <div class="stat-label">Manutenções</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card de Status -->
-                <div class="card status-card mt-4">
-                    <div class="card-body">
-                        <h5 class="card-title">Status da Conta</h5>
-                        <div class="status-list">
-                            <div class="status-item">
-                                <i class="fas fa-check-circle text-success"></i>
-                                <span>Conta verificada</span>
-                            </div>
-                            <div class="status-item">
-                                <i class="fas fa-bell text-primary"></i>
-                                <span>Notificações ativas</span>
-                            </div>
-                            <div class="status-item">
-                                <i class="fas fa-shield-alt text-info"></i>
-                                <span>Autenticação em 2 fatores</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Coluna de Informações Detalhadas -->
+        <div class="row justify-content-center">
             <div class="col-lg-8">
-                <!-- Informações Pessoais -->
-                <div class="card info-section">
-                    <div class="card-header">
-                        <h5><i class="fas fa-user me-2"></i>Informações Pessoais</h5>
-                        <button class="btn-edit" id="editPersonalInfo">
-                            <i class="fas fa-edit"></i> Editar
-                        </button>
-                    </div>
+                <div class="card password-card">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="info-field">
-                                    <label>Nome Completo</label>
-                                    <p>Carlos Alberto Silva</p>
+                        <div class="password-form">
+                            <form id="changePasswordForm">
+                                <div class="form-group">
+                                    <label for="currentPassword" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Senha Atual
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="currentPassword" required>
+                                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                                <div class="info-field">
-                                    <label>E-mail</label>
-                                    <p>carlos.silva@guiatrem.com</p>
+
+                                <div class="form-group">
+                                    <label for="newPassword" class="form-label">
+                                        <i class="fas fa-key me-2"></i>Nova Senha
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div class="password-strength mt-2">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 0%"></div>
+                                        </div>
+                                        <small class="text-muted">Força da senha: <span id="passwordStrength">Fraca</span></small>
+                                    </div>
                                 </div>
-                                <div class="info-field">
-                                    <label>Telefone</label>
-                                    <p>(11) 98765-4321</p>
+
+                                <div class="form-group">
+                                    <label for="confirmPassword" class="form-label">
+                                        <i class="fas fa-check-circle me-2"></i>Confirmar Nova Senha
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" id="confirmPassword" required>
+                                        <button class="btn btn-outline-secondary toggle-password" type="button">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                    <div id="passwordMatch" class="mt-1"></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-field">
-                                    <label>Departamento</label>
-                                    <p>Manutenção e Operações</p>
+
+                                <div class="password-requirements">
+                                    <h6>Requisitos da senha:</h6>
+                                    <ul>
+                                        <li id="reqLength"><i class="fas fa-times text-danger"></i> Mínimo 8 caracteres</li>
+                                        <li id="reqUpper"><i class="fas fa-times text-danger"></i> Pelo menos uma letra maiúscula</li>
+                                        <li id="reqLower"><i class="fas fa-times text-danger"></i> Pelo menos uma letra minúscula</li>
+                                        <li id="reqNumber"><i class="fas fa-times text-danger"></i> Pelo menos um número</li>
+                                        <li id="reqSpecial"><i class="fas fa-times text-danger"></i> Pelo menos um caractere especial</li>
+                                    </ul>
                                 </div>
-                                <div class="info-field">
-                                    <label>Cargo</label>
-                                    <p>Supervisor de Manutenção</p>
+
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary" onclick="window.history.back()">
+                                        <i class="fas fa-arrow-left me-2"></i>Voltar
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" id="submitBtn" disabled>
+                                        <i class="fas fa-save me-2"></i>Alterar Senha
+                                    </button>
                                 </div>
-                                <div class="info-field">
-                                    <label>Data de Admissão</label>
-                                    <p>15/03/2019</p>
-                                </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <!-- Informações de Contato -->
-                <div class="card info-section mt-4">
-                    <div class="card-header">
-                        <h5><i class="fas fa-address-card me-2"></i>Informações de Contato</h5>
-                        <button class="btn-edit" id="editContactInfo">
-                            <i class="fas fa-edit"></i> Editar
-                        </button>
-                    </div>
+                <div class="card security-tips mt-4">
                     <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="info-field">
-                                    <label>Endereço</label>
-                                    <p>Rua das Flores, 123</p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Complemento</label>
-                                    <p>Apto 45B</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="info-field">
-                                    <label>Cidade</label>
-                                    <p>São Paulo</p>
-                                </div>
-                                <div class="info-field">
-                                    <label>Estado</label>
-                                    <p>SP</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Preferências do Sistema -->
-                <div class="card info-section mt-4">
-                    <div class="card-header">
-                        <h5><i class="fas fa-cog me-2"></i>Preferências do Sistema</h5>
-                        <button class="btn-edit" id="editPreferences">
-                            <i class="fas fa-edit"></i> Editar
-                        </button>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="preference-item">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="notifications" checked>
-                                        <label class="form-check-label" for="notifications">
-                                            Notificações por e-mail
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="preference-item">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="darkMode">
-                                        <label class="form-check-label" for="darkMode">
-                                            Modo escuro
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="preference-item">
-                                    <div class="form-check form-switch">
-                                        <input class="form-check-input" type="checkbox" id="autoRefresh" checked>
-                                        <label class="form-check-label" for="autoRefresh">
-                                            Atualização automática
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="preference-item">
-                                    <label for="language" class="form-label">Idioma</label>
-                                    <select class="form-select" id="language">
-                                        <option selected>Português (BR)</option>
-                                        <option>English</option>
-                                        <option>Español</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ações da Conta -->
-                <div class="card info-section mt-4">
-                    <div class="card-header">
-                        <h5><i class="fas fa-shield-alt me-2"></i>Segurança da Conta</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="security-actions">
-                            <a href="alterar_senha.html" class="btn-security">
-                                <i class="fas fa-key"></i>
-                                Alterar Senha
-                            </a>
-                            <button class="btn-security">
-                                <i class="fas fa-mobile-alt"></i>
-                                Autenticação em 2 Fatores
-                            </button>
-                            <a href="historico_login.html" class="btn-security">
-                                <i class="fas fa-history"></i>
-                                Histórico de Login
-                            </a>
-                        </div>
+                        <h5><i class="fas fa-shield-alt me-2"></i>Dicas de Segurança</h5>
+                        <ul>
+                            <li>Use uma senha única que você não usa em outros sites</li>
+                            <li>Combine letras maiúsculas, minúsculas, números e símbolos</li>
+                            <li>Evite informações pessoais como nomes ou datas de nascimento</li>
+                            <li>Considere usar um gerenciador de senhas</li>
+                            <li>Altere sua senha regularmente</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
     <script src="../js/logout.js"></script>
     <script>
-        // Simulação de funcionalidades de edição
-        document.querySelectorAll('.btn-edit').forEach(button => {
-            button.addEventListener('click', function () {
-                const section = this.closest('.info-section');
-                const fields = section.querySelectorAll('.info-field p');
-
-                fields.forEach(field => {
-                    const currentValue = field.textContent;
-                    field.innerHTML = `<input type="text" class="form-control" value="${currentValue}">`;
-                });
-
-                this.innerHTML = '<i class="fas fa-check"></i> Salvar';
-                this.classList.add('btn-save');
-
-                // Remover evento anterior e adicionar novo
-                this.replaceWith(this.cloneNode(true));
-                document.querySelector('.btn-save').addEventListener('click', function () {
-                    alert('Alterações salvas com sucesso!');
-                    location.reload();
-                });
+        // Toggle password visibility
+        document.querySelectorAll('.toggle-password').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const icon = this.querySelector('i');
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    icon.className = 'fas fa-eye-slash';
+                } else {
+                    input.type = 'password';
+                    icon.className = 'fas fa-eye';
+                }
             });
+        });
+
+        // Password strength checker
+        const newPasswordInput = document.getElementById('newPassword');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const progressBar = document.querySelector('.progress-bar');
+        const passwordStrength = document.getElementById('passwordStrength');
+        const passwordMatch = document.getElementById('passwordMatch');
+        const submitBtn = document.getElementById('submitBtn');
+
+        newPasswordInput.addEventListener('input', checkPasswordStrength);
+        confirmPasswordInput.addEventListener('input', checkPasswordMatch);
+
+        function checkPasswordStrength() {
+            const password = newPasswordInput.value;
+            let strength = 0;
+            
+            // Check password requirements
+            updateRequirement('reqLength', password.length >= 8);
+            updateRequirement('reqUpper', /[A-Z]/.test(password));
+            updateRequirement('reqLower', /[a-z]/.test(password));
+            updateRequirement('reqNumber', /[0-9]/.test(password));
+            updateRequirement('reqSpecial', /[^A-Za-z0-9]/.test(password));
+            
+            // Calculate strength
+            if (password.length >= 8) strength += 20;
+            if (/[A-Z]/.test(password)) strength += 20;
+            if (/[a-z]/.test(password)) strength += 20;
+            if (/[0-9]/.test(password)) strength += 20;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 20;
+            
+            // Update progress bar
+            progressBar.style.width = strength + '%';
+            
+            // Update strength text and color
+            if (strength <= 40) {
+                progressBar.className = 'progress-bar bg-danger';
+                passwordStrength.textContent = 'Fraca';
+            } else if (strength <= 80) {
+                progressBar.className = 'progress-bar bg-warning';
+                passwordStrength.textContent = 'Média';
+            } else {
+                progressBar.className = 'progress-bar bg-success';
+                passwordStrength.textContent = 'Forte';
+            }
+            
+            validateForm();
+        }
+
+        function updateRequirement(elementId, met) {
+            const element = document.getElementById(elementId);
+            const icon = element.querySelector('i');
+            if (met) {
+                icon.className = 'fas fa-check text-success';
+            } else {
+                icon.className = 'fas fa-times text-danger';
+            }
+        }
+
+        function checkPasswordMatch() {
+            const newPassword = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            
+            if (confirmPassword === '') {
+                passwordMatch.innerHTML = '';
+            } else if (newPassword === confirmPassword) {
+                passwordMatch.innerHTML = '<i class="fas fa-check text-success"></i> As senhas coincidem';
+            } else {
+                passwordMatch.innerHTML = '<i class="fas fa-times text-danger"></i> As senhas não coincidem';
+            }
+            
+            validateForm();
+        }
+
+        function validateForm() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = newPasswordInput.value;
+            const confirmPassword = confirmPasswordInput.value;
+            
+            const allRequirementsMet = 
+                newPassword.length >= 8 &&
+                /[A-Z]/.test(newPassword) &&
+                /[a-z]/.test(newPassword) &&
+                /[0-9]/.test(newPassword) &&
+                /[^A-Za-z0-9]/.test(newPassword) &&
+                newPassword === confirmPassword &&
+                currentPassword !== '';
+            
+            submitBtn.disabled = !allRequirementsMet;
+        }
+
+        // Form submission
+        document.getElementById('changePasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate API call
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Alterando...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Senha alterada com sucesso!');
+                window.location.href = 'perfil.html';
+            }, 2000);
         });
     </script>
 </body>
