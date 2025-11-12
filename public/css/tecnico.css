@@ -1,126 +1,112 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #FFFFFF;
-}
-
-.container {
-    width: 400px;
-    margin: auto;
-    padding: 20px;
-    background-color: #ffffff;
-}
-
-.flex {
-    display: flex;
-}
-
-.agendar {
-    margin-top: 50px;
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.offcanvas-body .nav-link.active {
-    font-weight: 500;
-}
-
-.agendar h2 {
-    font-size: 25px;
-    color: #4180AB;
-    margin-bottom: 20px;
-}
-
-select,
-input {
-    width: 100%;
-    padding: 8px;
-    border: none;
-    background-color: #4a90c2;
-    color: white;
-    border-radius: 20px;
-    margin-top: 5px;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    cursor: pointer;
-}
+/* ESTILOS ESPECÍFICOS PARA A PÁGINA DO TÉCNICO */
 
 .dropAzul {
     background-color: #4a90c2 !important;
     color: white !important;
-    border-radius: 20px !important;
-}
-
-::placeholder {
-    color: white;
-    opacity: 1;
-}
-
-#confirmar {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    background-color: #4a90c2;
-    color: white;
+    border-radius: 10px !important;
     border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.3s;
+    padding: 10px 15px;
 }
 
-.checklist {
-    width: 100%;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    background-color: #EAEAEA;
-    border-radius: 8px;
-    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.dropAzul::placeholder {
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.checklist h2 {
-    font-size: 25px;
-    color: #4180AB;
-    margin-bottom: 20px;
-}
-
-.bg-primary-infa {
-    background-color: #4180AB !important;
-}
-
-.agendar label {
+.form-label {
     color: #004A98;
     font-weight: 500;
-    padding-top: 0px;
-    margin-top: 10px;
+    margin-bottom: 8px;
 }
 
-.checklist label {
-    color: #004A98;
+.btn-primary {
+    background-color: #4180AB;
+    border-color: #4180AB;
+    border-radius: 10px;
     font-weight: 500;
-    padding-top: 0px;
+    transition: all 0.3s ease;
 }
 
-.comentario {
-    margin-top: 10px;
+.btn-primary:hover {
+    background-color: #2c5a7a;
+    border-color: #2c5a7a;
+    transform: translateY(-2px);
 }
 
-@media screen and (min-width: 600px) {
-    /* .agendar {
-        max-width: 100%;
-    } */
+.form-check-input:checked {
+    background-color: #4180AB;
+    border-color: #4180AB;
+}
 
-    .container {
-        position: absolute;
-        left: 0;
-        right: 0;
-        justify-content: center;
+.form-check-label {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Estilos específicos para os formulários da página do técnico */
+.card-custom form {
+    padding: 0.5rem;
+}
+
+/* Ajustes para responsividade */
+@media (max-width: 768px) {
+    .card-custom form {
+        padding: 0.25rem;
     }
+    
+    .dropAzul {
+        padding: 8px 12px;
+    }
+}
+
+/* Estilo para o textarea */
+textarea.dropAzul {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Estilo para os checkboxes alinhados */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.form-check-input {
+    margin-top: 0;
+    flex-shrink: 0;
+}
+
+/* Melhorias visuais para os cards de formulário */
+.card-custom .card-title {
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Estilo para os botões de ação */
+#confirmar, #concluir {
+    font-size: 1.1rem;
+    padding: 12px;
+    margin-top: 1rem;
+}
+
+/* Ajustes para inputs de data */
+input[type="date"].dropAzul {
+    cursor: pointer;
+}
+
+input[type="date"].dropAzul::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+}
+
+/* Estados de foco para melhor acessibilidade */
+.dropAzul:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(65, 128, 171, 0.25);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 3px rgba(65, 128, 171, 0.25);
+    border-color: #4180AB;
 }

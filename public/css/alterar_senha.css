@@ -35,6 +35,10 @@ body {
     background-color: var(--primary-color) !important;
 }
 
+.offcanvas-body .nav-link.active {
+    font-weight: 500;
+}
+
 /* Título da Página */
 .page-header {
     margin-top: 2rem;

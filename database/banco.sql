@@ -1,6 +1,6 @@
 -- Criação do banco de dados
 CREATE DATABASE IF NOT EXISTS guiatrem
-USE guia_trem_db;
+USE guiatrem;
 
 -- Tabela de usuários
 CREATE TABLE IF NOT EXISTS usuarios (

@@ -138,20 +138,6 @@
     }
     ?>
     
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <i class="fas fa-microchip"></i>
-                    <h1>Sistema de Gerenciamento de Sensores</h1>
-                </div>
-                <div class="system-info">
-                    <p><i class="fas fa-database"></i> <?php echo count($sensores); ?> sensores cadastrados</p>
-                </div>
-            </div>
-        </div>
-    </header>
-    
     <div class="container">
         <!-- Mensagens de feedback -->
         <?php if (!empty($message)): ?>

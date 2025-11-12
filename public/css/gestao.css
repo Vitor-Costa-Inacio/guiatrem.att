@@ -9,7 +9,7 @@
 
 /* Estilo das Linhas (50% da página) */
 .linhas {
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 8px;
     padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -107,7 +107,7 @@
 
 /* Trens em Manutenção (25% da página) */
 .manutencoes {
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -166,7 +166,7 @@
 
 /* Alertas (25% da página) */
 .alertas {
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -211,7 +211,7 @@
 
 /* Controles de Rota (50% da página) */
 .controles-rota {
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -246,7 +246,7 @@
 
 /* Lista de Estações (50% da página) */
 .lista-estacoes {
-    background-color: #EAEAEA;
+    background-color: white;
     border-radius: 10px;
     padding: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

@@ -75,7 +75,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="dashboard.html">Início</a>
+                                <a class="nav-link active" aria-current="page" href="dashboard.html">Início</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -89,7 +89,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="gestao.html">Gestão de Rotas</a>
+                                <a class="nav-link active" aria-current="page" href="gestao.html">Gestão de Rotas</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -103,7 +103,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="monitoramento.html">Monitoramento
+                                <a class="nav-link active" aria-current="page" href="monitoramento.html">Monitoramento
                                     de
                                     Manutenção</a>
                             </div>
@@ -119,7 +119,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="relatorio.html">Relatórios</a>
+                                <a class="nav-link active" aria-current="page" href="relatorio.html">Relatórios</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -133,7 +133,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="tecnico.html">Técnico de
+                                <a class="nav-link active" aria-current="page" href="tecnico.html">Técnico de
                                     Manutenção</a>
                             </div>
                         </div>
@@ -148,7 +148,8 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="estacoes.html">Adiconar Estações</a>
+                                <a class="nav-link active" aria-current="page" href="estacoes.html">Adiconar
+                                    Estações</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -165,8 +166,23 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link" aria-current="page" href="historico.html">Histórico de
+                                <a class="nav-link active" aria-current="page" href="historico.html">Histórico de
                                     Manutenção</a>
+                            </div>
+                        </div>
+                                                <div class="row align-items-center">
+                            <div class="col-auto">
+                                <li class="nav-item list-unstyled">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                        class="bi bi-gear-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z">
+                                        </path>
+                                    </svg>
+                                </li>
+                            </div>
+                            <div class="col">
+                                <a class="nav-link active" aria-current="page" href="../../src/sistemas_sensores/index.php">Sistema e Sensores</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -278,29 +294,29 @@
                             <div class="col-md-6">
                                 <div class="info-field">
                                     <label>Nome Completo</label>
-                                    <p>Carlos Alberto Silva</p>
+                                    <p data-field="nome_completo">Carlos Alberto Silva</p>
                                 </div>
                                 <div class="info-field">
                                     <label>E-mail</label>
-                                    <p>carlos.silva@guiatrem.com</p>
+                                    <p data-field="email">carlos.silva@guiatrem.com</p>
                                 </div>
                                 <div class="info-field">
                                     <label>Telefone</label>
-                                    <p>(11) 98765-4321</p>
+                                    <p data-field="telefone">(11) 98765-4321</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info-field">
                                     <label>Departamento</label>
-                                    <p>Manutenção e Operações</p>
+                                    <p data-field="departamento">Manutenção e Operações</p>
                                 </div>
                                 <div class="info-field">
                                     <label>Cargo</label>
-                                    <p>Supervisor de Manutenção</p>
+                                    <p data-field="cargo">Supervisor de Manutenção</p>
                                 </div>
                                 <div class="info-field">
                                     <label>Data de Admissão</label>
-                                    <p>15/03/2019</p>
+                                    <p data-field="data_admissao">15/03/2019</p>
                                 </div>
                             </div>
                         </div>
@@ -320,21 +336,21 @@
                             <div class="col-md-6">
                                 <div class="info-field">
                                     <label>Endereço</label>
-                                    <p>Rua das Flores, 123</p>
+                                    <p data-field="endereco">Rua das Flores, 123</p>
                                 </div>
                                 <div class="info-field">
                                     <label>Complemento</label>
-                                    <p>Apto 45B</p>
+                                    <p data-field="complemento">Apto 45B</p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="info-field">
                                     <label>Cidade</label>
-                                    <p>São Paulo</p>
+                                    <p data-field="cidade">São Paulo</p>
                                 </div>
                                 <div class="info-field">
                                     <label>Estado</label>
-                                    <p>SP</p>
+                                    <p data-field="estado">SP</p>
                                 </div>
                             </div>
                         </div>
@@ -442,6 +458,188 @@
                     alert('Alterações salvas com sucesso!');
                     location.reload();
                 });
+            });
+        });
+
+        // Carregar dados do perfil ao abrir a página
+        document.addEventListener('DOMContentLoaded', function () {
+            carregarDadosPerfil();
+
+            // Adicionar eventos de edição
+            document.getElementById('editPersonalInfo').addEventListener('click', function () {
+                toggleEdicao('personalInfo', this);
+            });
+
+            document.getElementById('editContactInfo').addEventListener('click', function () {
+                toggleEdicao('contactInfo', this);
+            });
+        });
+
+        function carregarDadosPerfil() {
+            fetch('../api/perfil.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.sucesso) {
+                        preencherDadosPerfil(data.dados);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar perfil:', error);
+                });
+        }
+
+        function preencherDadosPerfil(dados) {
+            // Informações Pessoais
+            document.querySelector('#personalInfo [data-field="nome_completo"]').textContent = dados.nome_completo || 'Carlos Alberto Silva';
+            document.querySelector('#personalInfo [data-field="email"]').textContent = dados.email || 'carlos.silva@guiatrem.com';
+            document.querySelector('#personalInfo [data-field="telefone"]').textContent = dados.telefone || '(11) 98765-4321';
+            document.querySelector('#personalInfo [data-field="departamento"]').textContent = dados.departamento || 'Manutenção e Operações';
+            document.querySelector('#personalInfo [data-field="cargo"]').textContent = dados.cargo || 'Supervisor de Manutenção';
+            document.querySelector('#personalInfo [data-field="data_admissao"]').textContent = dados.data_admissao || '15/03/2019';
+
+            // Informações de Contato
+            document.querySelector('#contactInfo [data-field="endereco"]').textContent = dados.endereco || 'Rua das Flores, 123';
+            document.querySelector('#contactInfo [data-field="complemento"]').textContent = dados.complemento || 'Apto 45B';
+            document.querySelector('#contactInfo [data-field="cidade"]').textContent = dados.cidade || 'São Paulo';
+            document.querySelector('#contactInfo [data-field="estado"]').textContent = dados.estado || 'SP';
+
+            // Preferências
+            document.getElementById('notifications').checked = dados.notificacoes_email !== false;
+            document.getElementById('darkMode').checked = dados.modo_escuro === true;
+            document.getElementById('autoRefresh').checked = dados.atualizacao_automatica !== false;
+            document.getElementById('language').value = dados.idioma || 'pt-BR';
+
+            // Foto de perfil (se existir)
+            if (dados.foto_perfil && dados.foto_perfil !== 'default-avatar.png') {
+                document.querySelector('.profile-picture').src = '../images/' + dados.foto_perfil;
+            }
+        }
+
+        // Sistema de edição em tempo real
+        document.querySelectorAll('.btn-edit').forEach(button => {
+            button.addEventListener('click', function () {
+                const section = this.closest('.info-section');
+                const isEditing = this.classList.contains('editing');
+
+                if (!isEditing) {
+                    // Entrar no modo edição
+                    entrarModoEdicao(section, this);
+                } else {
+                    // Salvar alterações
+                    salvarAlteracoes(section, this);
+                }
+            });
+        });
+
+        function entrarModoEdicao(section, button) {
+            const fields = section.querySelectorAll('.info-field p');
+
+            fields.forEach(field => {
+                const currentValue = field.textContent;
+                const fieldName = field.getAttribute('data-field');
+                field.innerHTML = `<input type="text" class="form-control" data-field="${fieldName}" value="${currentValue}">`;
+            });
+
+            button.innerHTML = '<i class="fas fa-check"></i> Salvar';
+            button.classList.add('editing');
+            button.classList.add('btn-save');
+        }
+
+        function salvarAlteracoes(section, button) {
+            const inputs = section.querySelectorAll('.info-field input');
+            const dados = {};
+
+            inputs.forEach(input => {
+                const fieldName = input.getAttribute('data-field');
+                dados[fieldName] = input.value;
+            });
+
+            // Enviar para API
+            fetch('../api/perfil.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.sucesso) {
+                        // Sair do modo edição
+                        sairModoEdicao(section, button);
+                        alert('Perfil atualizado com sucesso!');
+                    } else {
+                        alert('Erro ao atualizar: ' + data.mensagem);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro:', error);
+                    alert('Erro ao atualizar perfil.');
+                });
+        }
+
+        function sairModoEdicao(section, button) {
+            const inputs = section.querySelectorAll('.info-field input');
+
+            inputs.forEach(input => {
+                const fieldName = input.getAttribute('data-field');
+                const value = input.value;
+                input.parentElement.innerHTML = `<p data-field="${fieldName}">${value}</p>`;
+            });
+
+            button.innerHTML = '<i class="fas fa-edit"></i> Editar';
+            button.classList.remove('editing');
+            button.classList.remove('btn-save');
+        }
+
+        // Salvar preferências
+        document.querySelectorAll('.form-check-input, #language').forEach(element => {
+            element.addEventListener('change', function () {
+                salvarPreferencias();
+            });
+        });
+
+        function salvarPreferencias() {
+            const dados = {
+                notificacoes_email: document.getElementById('notifications').checked,
+                modo_escuro: document.getElementById('darkMode').checked,
+                atualizacao_automatica: document.getElementById('autoRefresh').checked,
+                idioma: document.getElementById('language').value,
+                autenticacao_dois_fatores: false // Por enquanto fixo
+            };
+
+            fetch('../api/perfil.php', {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(dados)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.sucesso) {
+                        console.log('Preferências salvas');
+                    } else {
+                        console.error('Erro:', data.mensagem);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao salvar preferências:', error);
+                });
+        }
+
+        // Redirecionar para páginas de segurança
+        document.querySelectorAll('.btn-security').forEach(button => {
+            button.addEventListener('click', function () {
+                const text = this.textContent.trim();
+
+                if (text.includes('Alterar Senha')) {
+                    window.location.href = 'alterar-senha.html';
+                } else if (text.includes('Histórico de Login')) {
+                    window.location.href = 'historico-login.html';
+                } else if (text.includes('Autenticação')) {
+                    alert('Funcionalidade de autenticação em 2 fatores em desenvolvimento.');
+                }
             });
         });
     </script>
