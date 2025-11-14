@@ -232,7 +232,6 @@
 
     <main>
         <div class="container-fluid">
-            <!-- Mapa Interativo -->
             <div class="row mb-4">
                 <div class="col-12">
                     <div class="mapa-frame">
@@ -241,78 +240,30 @@
                 </div>
             </div>
 
-            <!-- Primeira Linha: Linhas (50%) | Trens em Manutenção (25%) | Alertas (25%) -->
             <div class="row g-4 mb-4">
-                <!-- Coluna das Linhas (50%) -->
                 <div class="col-12 col-lg-6">
-                    <div class="linhas">
-                        <h2>Linhas</h2>
-
-                        <div class="linha-container" data-linha="amarela">
-                            <div class="linha-nome amarela">Linha Amarela</div>
-                            <div class="status">
-                                <span class="status-text">Ativa</span>
-                                <span class="status-indicator ativa"></span>
-                            </div>
-                        </div>
-
-                        <div class="linha-container" data-linha="azul">
-                            <div class="linha-nome azul">Linha Azul</div>
-                            <div class="status">
-                                <span class="status-text">Ativa</span>
-                                <span class="status-indicator ativa"></span>
-                            </div>
-                        </div>
-
-                        <div class="linha-container" data-linha="verde">
-                            <div class="linha-nome verde">Linha Verde</div>
-                            <div class="status">
-                                <span class="status-text">Ativa</span>
-                                <span class="status-indicator ativa"></span>
-                            </div>
-                        </div>
-
-                        <div class="linha-container" data-linha="vermelha">
-                            <div class="linha-nome vermelha">Linha Vermelha</div>
-                            <div class="status">
-                                <span class="status-text">Ativa</span>
-                                <span class="status-indicator ativa"></span>
-                            </div>
+                    <div class="manutencoes h-100">
+                        <h2>Trens em Manutenção</h2>
+                        <div class="manutencao-content">
+                            <p class="manutencao-count">4 trens em manutenção</p>
+                            <a href="monitoramento.html" class="botao">Clique para visualizar</a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Coluna Direita: Trens em Manutenção (25%) e Alertas (25%) -->
                 <div class="col-12 col-lg-6">
-                    <div class="row g-4 h-100">
-                        <!-- Trens em Manutenção (25%) -->
-                        <div class="col-12 col-md-6">
-                            <div class="manutencoes h-100">
-                                <h2>Trens em Manutenção</h2>
-                                <div class="manutencao-content">
-                                    <p class="manutencao-count">4 trens em manutenção</p>
-                                    <a href="monitoramento.html" class="botao">Clique para visualizar</a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Alertas (25%) -->
-                        <div class="col-12 col-md-6">
-                            <div class="alertas h-100">
-                                <h2>Alertas</h2>
-                                <div class="alerta-content">
-                                    <div id="alert-message">Não há alertas no momento.</div>
-                                    <div id="alert-time"></div>
-                                </div>
-                            </div>
+                    <div class="alertas h-100">
+                        <h2>Alertas</h2>
+                        <div class="alerta-content">
+                            <div id="alert-message">Não há alertas no momento.</div>
+                            <div id="alert-time"></div>
                         </div>
                     </div>
                 </div>
             </div>
+            <br>
 
-            <!-- Segunda Linha: Criar Nova Rota (50%) | Estações Disponíveis (50%) -->
             <div class="row g-4">
-                <!-- Criar Nova Rota (50%) -->
                 <div class="col-12 col-lg-6">
                     <div class="controles-rota">
                         <h2>Criar Nova Rota</h2>
@@ -338,12 +289,10 @@
                     </div>
                 </div>
 
-                <!-- Estações Disponíveis (50%) -->
                 <div class="col-12 col-lg-6">
                     <div class="lista-estacoes">
                         <h2>Estações Disponíveis</h2>
                         <div id="lista-estacoes" class="estacoes-container">
-                            <!-- Lista preenchida dinamicamente -->
                         </div>
                     </div>
                 </div>
@@ -351,7 +300,6 @@
         </div>
     </main>
 
-    <!-- Modal para informações da rota -->
     <div class="modal fade" id="modalRota" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content">

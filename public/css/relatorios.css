@@ -215,3 +215,7 @@ body {
         font-size: 1.1rem;
     }
 }
+
+.offcanvas-body .nav-item {
+    margin-bottom: 0.5rem !important;
+}

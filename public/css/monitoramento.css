@@ -246,7 +246,7 @@ body {
 }
 
 .nao-iniciada {
-    background-color: #FFFFFF;
+    background-color: #c4bebe;
 }
 
 .legenda {
@@ -336,7 +336,7 @@ input::placeholder {
     background-color: #3b7da5;
 }
 
-.bg-primary-infa {
+.bg-primary-infi {
     background-color: #4180AB !important;
 }
 

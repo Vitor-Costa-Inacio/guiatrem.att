@@ -11,7 +11,7 @@ class Database {
     private $host = 'localhost';
     private $dbname = 'sistemas_sensores';
     private $username = 'root';
-    private $password = '';  // Senha do seu MySQL
+    private $password = 'root';  // Senha do seu MySQL
     
     public function __construct() {
         try {

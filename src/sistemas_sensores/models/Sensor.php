@@ -12,7 +12,7 @@
     <?php
     // Conexão com o banco de dados
     $host = 'localhost';
-    $dbname = 'sistemas_sensores';
+    $dbname = 'guiatrem';
     $username = 'root';
     $password = 'root';
     

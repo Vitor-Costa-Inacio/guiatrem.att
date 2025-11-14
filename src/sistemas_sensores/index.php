@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
      <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
 </head>
 <body>
@@ -73,7 +74,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="dashboard.html">Início</a>
+                                <a class="nav-link active" aria-current="page" href="public/html/dashboard.html">Início</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -224,7 +225,8 @@
             </div>
         </nav>
     </header>
-    
+    <br>
+    <br>
     <div class="container">
         <div class="dashboard">
             <!-- Atividades Recentes -->
@@ -305,7 +307,7 @@
                 </div>
                 <div class="card-content">
                     <p class="card-description">Monitore e configure todos os sensores do sistema ferroviário, verifique status e receba dados em tempo real.</p>
-                    <a href="/guiatrem.att/src/sistemas_sensores/models/sensor.php" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
+                    <a href="src/sistemas_sensores/models/Sensor.php" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
                 </div>
             </div>
             
@@ -317,7 +319,7 @@
                 </div>
                 <div class="card-content">
                     <p class="card-description">Planeje e gerencie os itinerários dos trens, ajuste horários e defina rotas otimizadas.</p>
-                    <a href="/guiatrem.att/public/html/estacoes.html" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
+                    <a href="/guiatrem.att-1/public/html/estacoes.html" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
                 </div>
             </div>
             
@@ -334,6 +336,8 @@
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
 </body>
 </html>

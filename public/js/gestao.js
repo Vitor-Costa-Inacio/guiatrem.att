@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
    
-    // Simulação de mudança automática de status (opcional)
+    /*Simulação de mudança automática de status (opcional)
     setInterval(function() {
         const randomIndex = Math.floor(Math.random() * linhas.length);
         toggleStatus(linhas[randomIndex]);
-    }, 15000);
+    }, 15000);*/
 
     // Sistema de alertas
     const alertas = [

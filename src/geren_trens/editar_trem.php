@@ -2,7 +2,7 @@
 // Configuração do Banco de Dados
 class Database {
     private $host = "localhost";
-    private $db_name = "gerenciamento_trem";
+    private $db_name = "guiatrem";
     private $username = "root";
     private $password = "root";
     public $conn;
