@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia Tern - Sistema Ferroviário</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="../../css/style.css">
+    <title>Guia Trem - Sistema Ferroviário</title>
+    <link rel="stylesheet" href="../../public/css/sistemas_sensores.css">
+    <link rel="stylesheet" href="../../public/css/principal.css">
+    <link rel="stylesheet" href="../../public/css/dashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
@@ -14,7 +15,7 @@
     <header>
         <nav class="navbar bg-primary-emphasis fixed-top">
             <div class="container-fluid">
-                <a class="navbar-brand text-white d-flex gap-2" href="dashboard.html">
+                <a class="navbar-brand text-white d-flex gap-2" href="../../public/html/dashboard.html">
                     <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" fill="currentColor"
                         class="bi bi-train-freight-front" viewBox="0 0 16 16">
                         <path
@@ -74,7 +75,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="public/html/dashboard.html">Início</a>
+                                <a class="nav-link active" aria-current="page" href="../../public/html/dashboard.html">Início</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -88,7 +89,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="gestao.html">Gestão de Rotas</a>
+                                <a class="nav-link active" aria-current="page" href="../../public/html/gestao.html">Gestão de Rotas</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -102,7 +103,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="monitoramento.html">Monitoramento
+                                <a class="nav-link active" aria-current="page" href="../../public/html/monitoramento.html">Monitoramento
                                     de
                                     Manutenção</a>
                             </div>
@@ -118,7 +119,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="relatorio.html">Relatórios</a>
+                                <a class="nav-link active" aria-current="page" href="../../public/html/relatorio.html">Relatórios</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -132,7 +133,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="tecnico.html">Técnico de
+                                <a class="nav-link active" aria-current="page" href="../../public/html/tecnico.html">Técnico de
                                     Manutenção</a>
                             </div>
                         </div>
@@ -147,7 +148,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="estacoes.html">Adiconar
+                                <a class="nav-link active" aria-current="page" href="../../public/html/estacoes.html">Adiconar
                                     Estações</a>
                             </div>
                         </div>
@@ -165,7 +166,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="historico.html">Histórico de
+                                <a class="nav-link active" aria-current="page" href="../../public/html/historico.html">Histórico de
                                     Manutenção</a>
                             </div>
                         </div>
@@ -181,7 +182,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="../../src/sistemas_sensores/index.php">Sistema e Sensores</a>
+                                <a class="nav-link active" aria-current="page" href="principal.php">Sistema e Sensores</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -196,7 +197,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="perfil.html">Perfil</a>
+                                <a class="nav-link active" aria-current="page" href="../../public/html/perfil.html">Perfil</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -212,7 +213,7 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="sobre.html">Sobre</a>
+                                <a class="nav-link active" aria-current="page" href="../../public/html/sobre.html">Sobre</a>
                             </div>
                         </div>
                         <div class="mt-auto text-center py-3">
@@ -230,35 +231,48 @@
     <div class="container">
         <div class="dashboard">
             <!-- Atividades Recentes -->
-            <div class="card">
-                <div class="card-header">
-                    <i class="fas fa-history"></i>
-                    Atividades Recentes
-                </div>
-                <div class="card-content">
-                    <ul class="activity-list">
-                        <li class="activity-item">
-                            <span class="activity-title">Alerta de manutenção</span>
-                            <span class="activity-time">Há 20 minutos</span>
-                        </li>
-                        <li class="activity-item">
-                            <span class="activity-title">Rota concluída</span>
-                            <span class="activity-time">Há 1 hora</span>
-                        </li>
-                        <li class="activity-item">
-                            <span class="activity-title">Manutenção agendada</span>
-                            <span class="activity-time">Há 2 horas</span>
-                        </li>
-                    </ul>
-                    
-                    <div class="divider"></div>
-                    
-                    <div class="activity-item">
-                        <span class="activity-title">Nova atualização do sistema</span>
-                        <span class="activity-time">Hoje às 08:45</span>
+            <div class="col-12 col-lg-6">
+                    <div class="card-custom atividades-recentes">
+                        <h2 class="card-title">
+                            <i class="fas fa-history me-2"></i>Atividades Recentes
+                        </h2>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="activity-text">
+                                <p><strong>Alerta de manutenção</strong><br>Há 20 minutos</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-text">
+                                <p><strong>Rota concluída</strong><br>Há 1 hora</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                            <div class="activity-text">
+                                <p><strong>Manutenção agendada</strong><br>Há 2 horas</p>
+                            </div>
+                        </div>
+
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="activity-text">
+                                <p><strong>Atualização de sistema</strong><br>Há 3 horas</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
             
             <!-- Localização da Frota -->
             <div class="card">
@@ -307,7 +321,7 @@
                 </div>
                 <div class="card-content">
                     <p class="card-description">Monitore e configure todos os sensores do sistema ferroviário, verifique status e receba dados em tempo real.</p>
-                    <a href="src/sistemas_sensores/models/Sensor.php" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
+                    <a href="../models/Sensor.php" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
                 </div>
             </div>
             
@@ -315,10 +329,10 @@
             <div class="card">
                 <div class="card-header">
                     <i class="fas fa-route"></i>
-                    Gerenciamento de Itinerários
+                    Gerenciamento de Estações
                 </div>
                 <div class="card-content">
-                    <p class="card-description">Planeje e gerencie os itinerários dos trens, ajuste horários e defina rotas otimizadas.</p>
+                    <p class="card-description">Planeje e gerencie as estações dos trens, ajuste horários e defina rotas otimizadas.</p>
                     <a href="/guiatrem.att-1/public/html/estacoes.html" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
                 </div>
             </div>
@@ -331,6 +345,17 @@
                 </div>
                 <div class="card-content">
                     <p class="card-description">Controle a frota de trens, acompanhe localização em tempo real e gerencie atribuições.</p>
+                    <a href="#" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <i class="fas fa-route"></i>
+                    Gerenciamento de Itinerários
+                </div>
+                <div class="card-content">
+                    <p class="card-description">Planeje e gerencie os itinerários dos trens, ajuste horários e defina rotas otimizadas.</p>
                     <a href="#" class="card-link" style="display: inline-block; background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 5px; text-decoration: none; text-align: center; transition: background 0.3s ease; margin-top: 1rem;">Acessar</a>
                 </div>
             </div>

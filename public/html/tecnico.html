@@ -12,7 +12,7 @@
 </head>
 
 <body>
-   <header>
+    <header>
         <nav class="navbar bg-primary-emphasis fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand text-white d-flex gap-2" href="dashboard.html">
@@ -25,19 +25,20 @@
 
                 <div class="d-flex">
                     <div class="d-flex align-items-center">
-                        <a href="notificacao.html"></a>
-                        <button class="btn text-white position-relative" type="button" id="notificationBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-bell" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                            </svg>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                id="notificationBadge" style="display: none;">
-                                0
-                            </span>
-                        </button>
+                        <a href="notificacao.html">
+                            <button class="btn text-white position-relative" type="button" id="notificationBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bell" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                                </svg>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    id="notificationBadge" style="display: none;">
+                                    0
+                                </span>
+                            </button>
+                        </a>
 
                         <button class="navbar-toggler navbar-dark text-white" type="button" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar"
@@ -170,7 +171,7 @@
                                     Manutenção</a>
                             </div>
                         </div>
-                                                <div class="row align-items-center">
+                        <div class="row align-items-center">
                             <div class="col-auto">
                                 <li class="nav-item list-unstyled">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -182,7 +183,8 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="../../src/sistemas_sensores/index.php">Sistema e Sensores</a>
+                                <a class="nav-link active" aria-current="page"
+                                    href="../../src/api/principal.php">Sistema e Sensores</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -226,7 +228,7 @@
             </div>
         </nav>
     </header>
-    
+
     <main class="main-content">
         <div class="container-fluid">
             <div class="row g-4">
@@ -236,10 +238,11 @@
                         <h2 class="card-title">
                             <i class="fas fa-calendar-plus me-2"></i>Agendar Manutenção
                         </h2>
-                        <form action="" method="get">
+                        <form action="public/php/processa_manutencao.php" method="post">
                             <div class="mb-3">
                                 <label for="solicitadas" class="form-label">Manutenções Solicitadas</label>
-                                <select class="form-select dropAzul" id="solicitadas" aria-label="Manutenções solicitadas">
+                                <select class="form-select dropAzul" id="solicitadas" name="solicitadas"
+                                    aria-label="Manutenções solicitadas">
                                     <option selected>Selecione uma manutenção</option>
                                     <option value="1">Trem 001 Linha Amarela Corretiva A</option>
                                     <option value="2">Trem 002 Linha Azul Corretiva B</option>
@@ -247,18 +250,19 @@
                                     <option value="4">Trem 004 Linha Vermelha Preventiva C</option>
                                 </select>
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="data" class="form-label">Selecione a data:</label>
                                 <input type="date" class="form-control dropAzul" id="data" name="data">
                             </div>
-                            
+
                             <div class="mb-3">
                                 <label for="servico" class="form-label">Serviço a ser realizado</label>
                                 <input type="text" class="form-control dropAzul" id="servico" placeholder="Digite...">
                             </div>
-                            
-                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="confirmar">Confirmar</button>
+
+                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="confirmar">Solicitar
+                                Manutenção</button> <!-- VER SE TEM PROBLEMA EM HAVER U-->
                         </form>
                     </div>
                 </div>
@@ -297,10 +301,12 @@
 
                             <div class="mb-3">
                                 <label for="comentario" class="form-label">Comentário do técnico</label>
-                                <textarea class="form-control dropAzul" id="comentario" rows="3" placeholder="Digite..."></textarea>
+                                <textarea class="form-control dropAzul" id="comentario" rows="3"
+                                    placeholder="Digite..."></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="concluir">Concluir Manutenção</button>
+                            <button type="submit" class="btn btn-primary w-100 py-2 mt-3" id="concluir">Concluir
+                                Manutenção</button>
                         </form>
                     </div>
                 </div>
@@ -382,6 +388,34 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/tecnico.js"></script>
     <script src="../js/logout.js"></script>
+<script>
+function enviarForm(e) {
+    e.preventDefault();
+    
+    fetch('processa_manutencao.php', {
+        method: 'POST',
+        body: new FormData(e.target)
+    })
+    .then(response => response.text())
+    .then(data => {
+        if (data.includes("sucesso")) {
+            // Popup de sucesso
+            alert("✅ Manutenção solicitada com sucesso!");
+            e.target.reset(); // Limpa o formulário
+        } else {
+            // Popup de erro
+            alert("❌ Erro ao solicitar manutenção");
+        }
+    })
+    .catch(error => {
+        alert("❌ Erro de conexão com o servidor");
+    });
+}
+
+// Adicionar evento ao formulário
+document.querySelector('form').addEventListener('submit', enviarForm);
+</script>
+    
 </body>
 
 </html>

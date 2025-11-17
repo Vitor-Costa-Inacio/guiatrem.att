@@ -92,8 +92,8 @@ INSERT INTO historico_login (
 
 CREATE TABLE trem(
     id_trem INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    linha_trem ENUM('amarela', 'azul', 'vermelha', 'verde') NOT NULL,
-    numero_trem VARCHAR(20) NOT NULL UNIQUE,
+    linha_trem text NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
+    numero_trem text NOT NULL UNIQUE, /*colocado em TEXT para receber o que vem do HTML*/
     modelo VARCHAR(100) NOT NULL,
     capacidade INT NOT NULL,
     status_trem ENUM('ativo', 'manutencao', 'inativo') DEFAULT 'ativo',
@@ -103,13 +103,13 @@ CREATE TABLE trem(
 
 CREATE TABLE manutencao (
     id_manutencao INT PRIMARY KEY AUTO_INCREMENT,
-    tipo_manutencao ENUM('preventiva', 'corretiva') NOT NULL,
-    prioridade ENUM('baixa', 'média', 'alta', 'urgente') NOT NULL,
+    tipo_manutencao varchar(10) NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
+    prioridade varchar(10) NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
     servico TEXT NOT NULL,
     data_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    status_manutencao ENUM('nao_iniciada', 'em_andamento', 'concluida') DEFAULT 'nao_iniciada',
+    status_manutencao varchar(20), /*colocado em TEXT para receber o que vem do HTML*/
     fk_trem INT NOT NULL,
-    fk_linha ENUM('amarela', 'azul', 'vermelha', 'verde') NOT NULL,
+    fk_linha text NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
     FOREIGN KEY (fk_trem) REFERENCES trem(id_trem),
     FOREIGN KEY (fk_linha) REFERENCES trem(id_linha)
 );
@@ -141,7 +141,7 @@ CREATE TABLE estacoes (
   data_criacao timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO estacoes (id, 'nome', 'latitude', 'longitude', 'endereco', 'data_criacao') VALUES
+INSERT INTO estacoes ('id', 'nome', 'latitude', 'longitude', 'endereco', 'data_criacao') VALUES
 (1, 'Estação 1', -26.30400000, -48.84600000, 'Joinville', '2025-10-27 11:11:09'),
 (2, 'Estação 2', -3.73045100, -38.52179900, 'Fortaleza', '2025-10-27 11:13:07'),
 (3, 'Estação 1.1', -25.42770000, -49.27310000, 'Curitiba', '2025-10-27 14:58:37'),
@@ -226,7 +226,7 @@ CREATE TABLE `estacoes` (
   `status` enum('ativa','inativa') DEFAULT 'ativa'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `estacoes` (`id`, `nome`, `latitude`, `longitude`, `endereco`, `data_criacao`, `status`) VALUES
+INSERT INTO estacoes ('id', 'nome', 'latitude', 'longitude', `endereco`, `data_criacao`, `status`) VALUES
 (1, 'Estação Central Joinville', -26.30400000, -48.84600000, 'Joinville, Santa Catarina', '2025-10-27 11:11:09', 'ativa'),
 (2, 'Estação Fortaleza', -3.73045100, -38.52179900, 'Fortaleza, Ceará', '2025-10-27 11:13:07', 'ativa'),
 (3, 'Estação Curitiba', -25.42770000, -49.27310000, 'Curitiba, Paraná', '2025-10-27 14:58:37', 'ativa'),

@@ -4,3 +4,5 @@ function confirmar() {
     const servico = document.getElementById('linha').value;
     const prioridade = document.getElementById('linha').value;
 }
+
+
