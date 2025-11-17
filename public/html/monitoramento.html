@@ -309,12 +309,12 @@
             <div id="historico">
                 <a href="historico.html" class="btn-ver">Visualizar histórico de manutenções</a>
             </div>
-            <form action="" method="get">
+            <form action="manutencaoManu" method="post">
                 <div class="solicitar-manutencao">
                     <h2>Solicitar uma Manutenção</h2>
 
                     <label for="linha">Linha</label>
-                    <select class="form-select dropAzul" aria-label="Default select example">
+                    <select class="form-select dropAzul"  name="linha" aria-label="Default select example">
                         <option selected>Selecione...</option>
                         <option value="1">Amarela</option>
                         <option value="2">Azul</option>
@@ -323,7 +323,7 @@
                     </select>
 
                     <label for="trem">Número do trem</label>
-                    <select class="form-select dropAzul" aria-label="Default select example">
+                    <select class="form-select dropAzul" name="trem" aria-label="Default select example">
                         <option selected>Selecione...</option>
                         <option value="1">001</option>
                         <option value="2">002</option>
@@ -332,14 +332,14 @@
                     </select>
 
                     <label for="manutencao">Tipo de manutenção</label>
-                    <select class="form-select dropAzul" aria-label="Default select example">
+                    <select class="form-select dropAzul" name="manutencao"  aria-label="Default select example">
                         <option selected>Selecione...</option>
                         <option value="1">Preventiva</option>
                         <option value="2">Corretiva</option>
                     </select>
 
                     <label for="prioridade">Prioridade</label>
-                    <select class="form-select dropAzul" aria-label="Default select example">
+                    <select class="form-select dropAzul"  name="prioridade" aria-label="Default select example">
                         <option selected>Selecione...</option>
                         <option value="1">A (crítico)</option>
                         <option value="2">B (importante)</option>
@@ -347,21 +347,25 @@
                     </select>
 
                     <label for="servico">Serviço a ser realizado</label>
-                    <input type="text" id="servico" placeholder="Digite...">
+                    <input type="text" id="servico" name="servico" placeholder="Digite...">
 
 
-                    <button type="submit" id="enviar" onclick="enviar()">Enviar solicitação</button>
+                    <button type="submit" id="enviar">Enviar solicitação</button>
                 </div>
             </form>
         </div>
     </main>
+    
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../js/monitoramento.js"></script>
     <script src="../js/logout.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+
         </script>
+        
+
 </body>
 
 </html>

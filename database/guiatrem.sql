@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS guiatrem
+CREATE DATABASE IF NOT EXISTS guiatrem;
 USE guiatrem;
 
 CREATE TABLE IF NOT EXISTS usuarios (
@@ -101,7 +101,18 @@ CREATE TABLE trem(
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE manutencao (
+CREATE TABLE manutencoes( /*manutenção da pagina do monitoramento*/
+id int AUTO_INCREMENT PRIMARY KEY,
+linha varchar(50) not null,
+trem varchar(10) not null,
+tipo_manutencao varchar(50) not null,
+prioridade varchar(20) not null,
+servico text not null,
+data_solicitacao DATETIME not null,
+status varchar(20) default 'pendente'
+);
+
+CREATE TABLE manutencao ( /*pagina do tecnico*/
     id_manutencao INT PRIMARY KEY AUTO_INCREMENT,
     tipo_manutencao varchar(10) NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
     prioridade varchar(10) NOT NULL, /*colocado em TEXT para receber o que vem do HTML*/
