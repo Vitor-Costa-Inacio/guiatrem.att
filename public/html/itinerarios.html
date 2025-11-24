@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre - Guia Trem</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <title>Guia Trem - Gerenciar Itinerários</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/itinerarios.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/sobre.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -26,18 +27,18 @@
                 <div class="d-flex">
                     <div class="d-flex align-items-center">
                         <a href="notificacao.html">
-                        <button class="btn text-white position-relative" type="button" id="notificationBtn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                class="bi bi-bell" viewBox="0 0 16 16">
-                                <path
-                                    d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
-                            </svg>
-                            <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
-                                id="notificationBadge" style="display: none;">
-                                0
-                            </span>
-                        </button>
+                            <button class="btn text-white position-relative" type="button" id="notificationBtn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-bell" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6" />
+                                </svg>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                                    id="notificationBadge" style="display: none;">
+                                    0
+                                </span>
+                            </button>
                         </a>
 
                         <button class="navbar-toggler navbar-dark text-white" type="button" data-bs-toggle="offcanvas"
@@ -185,7 +186,7 @@
                                     Manutenção</a>
                             </div>
                         </div>
-                                                <div class="row align-items-center">
+                        <div class="row align-items-center">
                             <div class="col-auto">
                                 <li class="nav-item list-unstyled">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
@@ -197,7 +198,8 @@
                                 </li>
                             </div>
                             <div class="col">
-                                <a class="nav-link active" aria-current="page" href="../../src/api/principal.php">Sistema e Sensores</a>
+                                <a class="nav-link active" aria-current="page"
+                                    href="../../src/api/principal.php">Sistema e Sensores</a>
                             </div>
                         </div>
                         <div class="row align-items-center">
@@ -242,188 +244,134 @@
         </nav>
     </header>
 
-    <main class="container">
-        <!-- Cabeçalho da Página -->
-        <div class="page-header">
-            <h1 class="page-title">Sobre o Guia Trem</h1>
-            <p class="page-subtitle">Conheça mais sobre nossa missão, tecnologia e equipe</p>
-        </div>
+    <main class="main-content">
+        <div class="container-fluid">
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1 class="page-title">
+                            <i class="fas fa-route me-2"></i>Gerenciar Itinerários
+                        </h1>
+                        <button class="btn btn-primary" id="btn-novo-itinerario">
+                            <i class="fas fa-plus-circle me-2"></i>Novo Itinerário
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-        <!-- Cards de Informações -->
-        <div class="row g-4 info-cards">
-            <!-- Sobre o Aplicativo -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-mobile-alt"></i>
+            <div class="row">
+                <!-- Lista de Itinerários -->
+                <div class="col-md-6">
+                    <div class="card-custom">
+                        <h2 class="card-title">
+                            <i class="fas fa-list me-2"></i>Itinerários Cadastrados
+                        </h2>
+                        <div id="lista-itinerarios" class="itinerarios-list">
+                            <!-- Lista será preenchida dinamicamente -->
                         </div>
-                        <h5 class="card-title">Sobre o Aplicativo</h5>
-                        <p class="card-text">Sistema completo para gestão e monitoramento de operações ferroviárias,
-                            proporcionando controle em tempo real.</p>
-                        <div class="stats-container">
-                            <div class="stat-item">
-                                <div class="stat-value">V2.5</div>
-                                <div class="stat-label">Versão</div>
+                    </div>
+                </div>
+
+                <!-- Detalhes do Itinerário -->
+                <div class="col-md-6">
+                    <div class="card-custom">
+                        <h2 class="card-title">
+                            <i class="fas fa-info-circle me-2"></i>Detalhes do Itinerário
+                        </h2>
+                        <div id="detalhes-itinerario" class="detalhes-container">
+                            <div class="text-center text-muted py-5">
+                                <i class="fas fa-route fa-3x mb-3"></i>
+                                <p>Selecione um itinerário para visualizar os detalhes</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Tecnologias Utilizadas -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h5 class="card-title">Tecnologias</h5>
-                        <p class="card-text">Desenvolvido com as mais modernas tecnologias para garantir performance,
-                            segurança e escalabilidade.</p>
-                        <div class="stats-container">
-                            <div class="stat-item">
-                                <div class="stat-value">PHP</div>
-                                <div class="stat-label">Backend</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">MySQL</div>
-                                <div class="stat-label">Banco</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Equipe de Desenvolvimento -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h5 class="card-title">Equipe</h5>
-                        <p class="card-text">Profissionais especializados em desenvolvimento, UX/UI e engenharia
-                            ferroviária.</p>
-                        <div class="stats-container">
-                            <div class="stat-item">
-                                <div class="stat-value">15+</div>
-                                <div class="stat-label">Especialistas</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value">1</div>
-                                <div class="stat-label">Ano</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contato -->
-            <div class="col-md-6 col-lg-3">
-                <div class="card info-card">
-                    <div class="card-body">
-                        <div class="card-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h5 class="card-title">Contato</h5>
-                        <p class="card-text">Entre em contato conosco para suporte técnico, dúvidas ou informações sobre
-                            parcerias.</p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div class="contact-details">
-                                    <div class="contact-label">E-mail</div>
-                                    <div class="contact-value">contato@guiatrem.com</div>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <i class="fas fa-phone"></i>
-                                <div class="contact-details">
-                                    <div class="contact-label">Telefone</div>
-                                    <div class="contact-value">(11) 3456-7890</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Seção Nossa Missão -->
-        <div class="content-section">
-            <h2><i class="fas fa-rocket"></i>Nossa Missão</h2>
-            <p>Nossa missão é revolucionar a gestão ferroviária através de tecnologia inovadora, proporcionando
-                segurança, eficiência e confiabilidade no transporte de passageiros e cargas. Buscamos constantemente
-                melhorar a experiência dos usuários e otimizar os processos operacionais.</p>
-            <p>Através do Guia Trem, oferecemos soluções integradas que permitem o monitoramento em tempo real, gestão
-                de manutenções preventivas e corretivas, e análise de dados para tomada de decisões estratégicas.</p>
-        </div>
-
-        <!-- Seção Nossa História -->
-        <div class="content-section">
-            <h2><i class="fas fa-history"></i>Nossa História</h2>
-            <p>Fundada em 2025, a Guia Trem nasceu da necessidade de modernizar o setor ferroviário brasileiro. Nossos
-                fundadores, engenheiros com vasta experiência no setor, identificaram a carência de sistemas integrados
-                que pudessem otimizar a gestão de frotas e manutenções.</p>
-            <p>Desde então, temos evoluído constantemente, incorporando as mais recentes tecnologias e expandindo nossa
-                atuação para diferentes operadoras ferroviárias em todo o país.</p>
-        </div>
-
-        <!-- Seção de Recursos -->
-        <div class="content-section">
-            <h2><i class="fas fa-cogs"></i>Recursos do Sistema</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <i class="fas fa-route"></i>
-                    <div>
-                        <h5>Gestão de Rotas</h5>
-                        <p>Planejamento e monitoramento de rotas ferroviárias em tempo real.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-tools"></i>
-                    <div>
-                        <h5>Monitoramento de Manutenção</h5>
-                        <p>Controle completo de manutenções preventivas e corretivas.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-chart-bar"></i>
-                    <div>
-                        <h5>Relatórios Analíticos</h5>
-                        <p>Geração de relatórios detalhados para análise de desempenho.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-bell"></i>
-                    <div>
-                        <h5>Sistema de Notificações</h5>
-                        <p>Alertas em tempo real sobre eventos importantes do sistema.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-database"></i>
-                    <div>
-                        <h5>Histórico Completo</h5>
-                        <p>Registro detalhado de todas as operações e manutenções realizadas.</p>
-                    </div>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-shield-alt"></i>
-                    <div>
-                        <h5>Segurança</h5>
-                        <p>Sistema seguro com controle de acesso e proteção de dados.</p>
+            <!-- Mapa de Visualização -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card-custom">
+                        <h2 class="card-title">
+                            <i class="fas fa-map me-2"></i>Visualização do Itinerário
+                        </h2>
+                        <div id="map" style="height: 400px; border-radius: 10px;"></div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <script src="../js/logout.js"></script>
+    <!-- Modal para Criar/Editar Itinerário -->
+    <div class="modal fade" id="modalItinerario" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalItinerarioTitulo">Novo Itinerário</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formItinerario">
+                        <input type="hidden" id="itinerario-id">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="nome-itinerario" class="form-label">Nome do Itinerário</label>
+                                    <input type="text" class="form-control" id="nome-itinerario" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="trem-itinerario" class="form-label">Trem Designado</label>
+                                    <select class="form-control" id="trem-itinerario" required>
+                                        <option value="">Selecione um trem</option>
+                                        <!-- Opções serão preenchidas dinamicamente -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="descricao-itinerario" class="form-label">Descrição</label>
+                            <textarea class="form-control" id="descricao-itinerario" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Rotas do Itinerário</label>
+                            <div id="lista-rotas-disponiveis" class="rotas-lista">
+                                <!-- Lista de rotas disponíveis -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btn-salvar-itinerario">Salvar Itinerário</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal fade" id="modalConfirmacao" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmação</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="modal-mensagem">Deseja realmente excluir este itinerário?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btn-confirmar-exclusao">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="../js/itinerarios.js"></script>
 </body>
 
 </html>

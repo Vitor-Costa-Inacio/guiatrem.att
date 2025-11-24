@@ -1,0 +1,131 @@
+/* Estilos específicos para a página de itinerários */
+.page-title {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+}
+
+.itinerarios-list {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.itinerario-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.itinerario-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.itinerario-item.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.itinerario-header {
+    display: flex;
+    justify-content: between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.itinerario-nome {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.itinerario-acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.itinerario-info {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.itinerario-item.active .itinerario-info {
+    color: #e9ecef;
+}
+
+.detalhes-container {
+    min-height: 300px;
+}
+
+.rotas-lista {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.rota-item {
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: white;
+    border-radius: 6px;
+    border-left: 4px solid #4180AB;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rota-checkbox {
+    margin-right: 10px;
+}
+
+.rota-info {
+    flex: 1;
+}
+
+.rota-nome {
+    font-weight: 600;
+    margin: 0;
+}
+
+.rota-descricao {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0;
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-ativo {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-inativo {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .itinerario-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .itinerario-acoes {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}

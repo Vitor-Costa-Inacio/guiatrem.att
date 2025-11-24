@@ -361,3 +361,16 @@ CREATE TABLE IF NOT EXISTS sensores (
 
 INSERT INTO sensores (nome_sensor, tipo_sensor, localizacao, status) VALUES
 ('Sensor Temperatura 001', 'Temperatura', 'Vagão A - Compartimento Motor', 'ativo'),
+
+--trens teste pode ser tirado nn funcionou --
+
+CREATE TABLE trens(
+    id_trem INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    linha VARCHAR(50) NOT NULL,
+    numero_trem VARCHAR(20) NOT NULL UNIQUE,
+    modelo VARCHAR(100) NOT NULL,
+    capacidade INT NOT NULL,
+    status_trem ENUM('ativo', 'manutencao', 'inativo') DEFAULT 'ativo',
+    data_ultima_manutencao DATE,
+    data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
