@@ -1,10 +1,21 @@
 <?php
 // Configurar caminhos relativos
-$config_path = dirname(dirname(__FILE__)) . '/../config/config.php';
-$database_path = dirname(dirname(__FILE__)) . '/../config/database.php';
+$config_path = __DIR__ . '/../../config/config.php';
+$database_path = __DIR__ . '/../../config/database.php';
 
 include_once $config_path;
 include_once $database_path;
+
+// Iniciar sessão
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Função de redirecionamento
+function redirect($url) {
+    header("Location: $url");
+    exit();
+}
 
 if($_POST){
     try {
@@ -45,7 +56,8 @@ if($_POST){
         }
     }
     
-    redirect('./index.php');
+    // Redirecionar para a página principal (index.php na mesma pasta)
+    redirect('index.php');
     exit();
 }
 ?>

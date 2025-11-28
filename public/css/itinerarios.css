@@ -3,62 +3,157 @@
     color: var(--primary-color);
     font-weight: 600;
     margin: 0;
+    font-size: 1.8rem;
 }
 
 .itinerarios-list {
     max-height: 500px;
     overflow-y: auto;
+    padding-right: 5px;
+}
+
+.itinerarios-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.itinerarios-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.itinerarios-list::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
 }
 
 .itinerario-item {
-    padding: 15px;
-    margin-bottom: 10px;
+    padding: 1.25rem;
+    margin-bottom: 0.75rem;
     background-color: #f8f9fa;
-    border-radius: 8px;
+    border-radius: 10px;
     border-left: 4px solid var(--primary-color);
     cursor: pointer;
     transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .itinerario-item:hover {
     background-color: #e9ecef;
     transform: translateX(5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .itinerario-item.active {
     background-color: var(--primary-color);
     color: white;
+    box-shadow: 0 4px 12px rgba(65, 128, 171, 0.3);
 }
 
 .itinerario-header {
     display: flex;
-    justify-content: between;
-    align-items: center;
-    margin-bottom: 8px;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
 }
 
 .itinerario-nome {
     font-weight: 600;
     font-size: 1.1rem;
     margin: 0;
+    flex: 1;
 }
 
 .itinerario-acoes {
     display: flex;
-    gap: 8px;
+    gap: 0.5rem;
+    margin-left: 1rem;
 }
 
 .itinerario-info {
     font-size: 0.9rem;
     color: #666;
+    line-height: 1.5;
 }
 
 .itinerario-item.active .itinerario-info {
-    color: #e9ecef;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.itinerario-item.active .itinerario-info strong {
+    color: white;
 }
 
 .detalhes-container {
     min-height: 300px;
+}
+
+.detalhes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+.detalhes-titulo {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.detalhes-info {
+    margin-bottom: 1.5rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item strong {
+    min-width: 120px;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.info-item span {
+    margin-left: 0.5rem;
+}
+
+.detalhes-descricao {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.detalhes-descricao h5 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.detalhes-descricao p {
+    margin: 0;
+    color: #555;
+    line-height: 1.5;
+}
+
+.detalhes-rotas h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .rotas-lista {
@@ -67,21 +162,29 @@
     border: 1px solid #dee2e6;
     border-radius: 8px;
     padding: 10px;
+    background-color: #f8f9fa;
 }
 
 .rota-item {
-    padding: 10px;
+    padding: 12px;
     margin-bottom: 8px;
     background-color: white;
     border-radius: 6px;
-    border-left: 4px solid #4180AB;
+    border-left: 4px solid var(--primary-color);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    transition: all 0.2s ease;
+}
+
+.rota-item:hover {
+    background-color: #f0f7ff;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .rota-checkbox {
-    margin-right: 10px;
+    margin-right: 12px;
+    margin-top: 2px;
 }
 
 .rota-info {
@@ -90,7 +193,8 @@
 
 .rota-nome {
     font-weight: 600;
-    margin: 0;
+    margin: 0 0 4px 0;
+    color: var(--text-color);
 }
 
 .rota-descricao {
@@ -100,10 +204,11 @@
 }
 
 .status-badge {
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 4px 12px;
+    border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 600;
+    display: inline-block;
 }
 
 .status-ativo {
@@ -116,16 +221,163 @@
     color: #721c24;
 }
 
+/* Botões personalizados */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-outline-primary, .btn-outline-danger {
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-primary:hover {
+    transform: translateY(-1px);
+}
+
+.btn-outline-danger:hover {
+    transform: translateY(-1px);
+}
+
+/* Modal customizado */
+.modal-header {
+    background-color: var(--primary-color);
+    color: white;
+    border-bottom: none;
+    padding: 1.25rem 1.5rem;
+}
+
+.modal-title {
+    font-weight: 600;
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--secondary-color);
+    padding: 1rem 1.5rem;
+}
+
+/* Formulários */
+.form-label {
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(65, 128, 171, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* Lista de estações */
+.list-group-item {
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+}
+
+.badge.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* Mapa */
+#map {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
+    .page-title {
+        font-size: 1.5rem;
+    }
+    
     .itinerario-header {
         flex-direction: column;
         align-items: flex-start;
     }
     
     .itinerario-acoes {
-        margin-top: 8px;
+        margin-top: 0.75rem;
+        margin-left: 0;
         width: 100%;
         justify-content: flex-end;
+    }
+    
+    .detalhes-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .detalhes-header .status-badge {
+        margin-top: 0.5rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .info-item span {
+        margin-left: 0;
+        margin-top: 0.25rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title {
+        font-size: 1.3rem;
+    }
+    
+    .itinerario-item {
+        padding: 1rem;
+    }
+    
+    .itinerario-nome {  
+        font-size: 1rem;
+    }
+    
+    .detalhes-titulo {
+        font-size: 1.2rem;
+    }
+    
+    .detalhes-descricao {
+        padding: 0.75rem;
+    }
+    
+    .modal-body {
+        padding: 1rem;
     }
 }
